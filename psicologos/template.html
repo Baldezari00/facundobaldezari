@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Consulta - Psicología</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f5f7fa;">
+        <tr>
+            <td align="center" style="padding: 40px 20px;">
+                <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden;">
+                    
+                    <!-- HEADER -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); padding: 40px 30px; text-align: center;">
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600; letter-spacing: -0.5px;">
+                                🧠 Nueva Consulta
+                            </h1>
+                            <p style="margin: 10px 0 0 0; color: #e8f4fd; font-size: 16px;">
+                                Solicitud de turno recibida
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- ALERTA DE NUEVO MENSAJE -->
+                    <tr>
+                        <td style="padding: 0;">
+                            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px 30px; margin: 0;">
+                                <p style="margin: 0; color: #856404; font-size: 14px; font-weight: 600;">
+                                    ⚡ Atención: Responde lo antes posible para asegurar el turno
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- INFORMACIÓN DEL PACIENTE -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <h2 style="margin: 0 0 25px 0; color: #2c3e50; font-size: 20px; font-weight: 600; border-bottom: 2px solid #4A90E2; padding-bottom: 10px;">
+                                📋 Datos del Paciente
+                            </h2>
+
+                            <!-- NOMBRE -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
+                                        <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="width: 40px; vertical-align: top;">
+                                                    <div style="width: 36px; height: 36px; background-color: #4A90E2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">
+                                                        👤
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 15px;">
+                                                    <p style="margin: 0; color: #6c757d; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Nombre Completo</p>
+                                                    <p style="margin: 5px 0 0 0; color: #2c3e50; font-size: 16px; font-weight: 600;">
+                                                        {{nombre}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- EMAIL Y TELÉFONO -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="width: 48%; padding: 15px; background-color: #f8f9fa; border-radius: 8px; vertical-align: top;">
+                                        <p style="margin: 0; color: #6c757d; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">📧 Email</p>
+                                        <p style="margin: 8px 0 0 0; color: #2c3e50; font-size: 14px; font-weight: 600; word-break: break-all;">
+                                            <a href="mailto:{{email}}" style="color: #4A90E2; text-decoration: none;">{{email}}</a>
+                                        </p>
+                                    </td>
+                                    <td style="width: 4%;"></td>
+                                    <td style="width: 48%; padding: 15px; background-color: #f8f9fa; border-radius: 8px; vertical-align: top;">
+                                        <p style="margin: 0; color: #6c757d; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">📱 Teléfono</p>
+                                        <p style="margin: 8px 0 0 0; color: #2c3e50; font-size: 14px; font-weight: 600;">
+                                            <a href="tel:{{telefono}}" style="color: #4A90E2; text-decoration: none;">{{telefono}}</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- EDAD -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
+                                        <p style="margin: 0; color: #6c757d; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">🎂 Edad</p>
+                                        <p style="margin: 8px 0 0 0; color: #2c3e50; font-size: 14px; font-weight: 600;">
+                                            {{edad}} años
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- PREFERENCIA DE ATENCIÓN -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                                <tr>
+                                    <td style="padding: 15px; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border-radius: 8px; border-left: 4px solid #667eea;">
+                                        <p style="margin: 0; color: #6c757d; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">💻 Preferencia de Atención</p>
+                                        <p style="margin: 8px 0 0 0; color: #2c3e50; font-size: 16px; font-weight: 700;">
+                                            {{preferencia}}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- MOTIVO DE CONSULTA -->
+                            <h2 style="margin: 30px 0 20px 0; color: #2c3e50; font-size: 20px; font-weight: 600; border-bottom: 2px solid #4A90E2; padding-bottom: 10px;">
+                                💭 Motivo de Consulta
+                            </h2>
+                            
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745;">
+                                <p style="margin: 0; color: #2c3e50; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">{{motivo}}</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- ACCIONES RÁPIDAS -->
+                    <tr>
+                        <td style="padding: 0 30px 40px 30px;">
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding-right: 10px;">
+                                        <a href="https://wa.me/{{telefono}}" style="display: block; padding: 16px 20px; background-color: #25D366; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center; box-shadow: 0 2px 8px rgba(37,211,102,0.3);">
+                                            📱 Responder por WhatsApp
+                                        </a>
+                                    </td>
+                                    <td style="padding-left: 10px;">
+                                        <a href="mailto:{{email}}" style="display: block; padding: 16px 20px; background-color: #4A90E2; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center; box-shadow: 0 2px 8px rgba(74,144,226,0.3);">
+                                            ✉️ Responder por Email
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- INFORMACIÓN ADICIONAL -->
+                    <tr>
+                        <td style="background-color: #f8f9fa; padding: 25px 30px; border-top: 1px solid #dee2e6;">
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="vertical-align: top; padding-bottom: 15px;">
+                                        <p style="margin: 0; color: #6c757d; font-size: 12px;">
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="background-color: #e7f3ff; padding: 15px; border-radius: 6px; border-left: 3px solid #4A90E2;">
+                                            <p style="margin: 0; color: #2c5282; font-size: 13px; line-height: 1.6;">
+                                                💡 <strong>Recordatorio:</strong> Se recomienda responder dentro de las primeras 24 horas para asegurar el compromiso del paciente.
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- FOOTER -->
+                    <tr>
+                        <td style="background-color: #2c3e50; padding: 25px 30px; text-align: center;">
+                            <p style="margin: 0 0 10px 0; color: #95a5a6; font-size: 13px;">
+                                Este email fue generado automáticamente desde tu página web
+                            </p>
+                            <p style="margin: 0; color: #7f8c8d; font-size: 12px;">
+                                🔒 Información confidencial - Mantener privacidad del paciente
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

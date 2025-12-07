@@ -15,7 +15,7 @@
     // Paso 3: Crear template de email
     // Paso 4: Copiar tu Public Key y reemplazar abajo
     
-    // emailjs.init('YOUR_PUBLIC_KEY'); // <-- DESCOMENTAR Y AGREGAR TU KEY
+    emailjs.init('YzQVxS-7kuYTarZ40'); // <-- DESCOMENTAR Y AGREGAR TU KEY
     
     // ==========================================================================
     // VARIABLES GLOBALES
@@ -263,8 +263,8 @@
                 
                 // OPCIÓN 1: Enviar con EmailJS (RECOMENDADO)
                 // Descomentar estas líneas cuando tengas configurado EmailJS:
-                /*
-                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                
+                emailjs.send('service_wd0cm2m', 'template_x2jhkxg', formData)
                     .then(function(response) {
                         console.log('Email enviado exitosamente!', response);
                         mostrarExito();
@@ -273,14 +273,16 @@
                         alert('Hubo un error al enviar el formulario. Por favor, intentá nuevamente o contactanos por WhatsApp.');
                         resetButton();
                     });
-                */
                 
+                /*
                 // OPCIÓN 2: Simular envío (TEMPORAL - para testing)
                 // Comentar o eliminar esto cuando tengas EmailJS configurado:
                 setTimeout(function() {
                     console.log('Formulario enviado (simulado):', formData);
                     mostrarExito();
                 }, 1500);
+
+                */
             }
         });
         
