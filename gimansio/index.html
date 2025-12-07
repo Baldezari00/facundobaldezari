@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWER GYM - Transformá Tu Cuerpo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Header Sticky -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <div class="logo">POWER GYM</div>
+            <nav class="nav" id="nav">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#clases" class="nav-link">Clases</a>
+                <a href="#planes" class="nav-link">Planes</a>
+                <a href="#instalaciones" class="nav-link">Instalaciones</a>
+                <a href="#transformaciones" class="nav-link">Transformaciones</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+            <button class="theme-switcher" id="themeSwitcher" aria-label="Cambiar tema">🎨</button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">TRANSFORMÁ TU CUERPO. TRANSFORMÁ TU VIDA.</h1>
+                <p class="hero-subtitle">Entrenamiento funcional de alta intensidad</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Miembros Activos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10000">0</span>
+                        <span class="stat-label">Clases Dictadas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Años Transformando Vidas</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#contacto"><button class="btn-primary btn-large">PROBÁ GRATIS HOY</button></a>
+                    <a href="#planes"><button class="btn-secondary btn-large">VER PLANES</button>
+</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>BAJÁ</span>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="container promo-content">
+            <div class="promo-icon">🎁</div>
+            <h2 class="promo-title">¡OFERTA LIMITADA! 50% OFF PRIMER MES</h2>
+            <a href="#contacto"><button class="btn-primary">APROVECHÁ AHORA</button></a>
+        </div>
+    </section>
+
+    <!-- Clases Section -->
+    <section class="section clases-section" id="clases">
+        <div class="container">
+            <h2 class="section-title">NUESTRAS DISCIPLINAS</h2>
+            <div class="clases-grid">
+                <div class="clase-card">
+                    <div class="clase-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMWMxYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNkOWZiMDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GVU5DSU9OQUw8L3RleHQ+PC9zdmc+')"></div>
+                    <div class="clase-content">
+                        <h3 class="clase-title">FUNCIONAL</h3>
+                        <p class="clase-desc">Entrenamiento integral para todo el cuerpo</p>
+                        <div class="clase-meta">
+                            <span class="badge">Todos los niveles</span>
+                            <span class="duration">50 min</span>
+                        </div>
+                        <button class="btn-secondary">VER HORARIOS</button>
+                    </div>
+                </div>
+
+                <div class="clase-card popular">
+                    <div class="popular-badge">MÁS POPULAR</div>
+                    <div class="clase-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMWMxYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNFRjQ0NDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5DUk9TU0ZJVDWVT0Q+PC90ZXh0Pjwvc3ZnPg==')"></div>
+                    <div class="clase-content">
+                        <h3 class="clase-title">CROSSFIT</h3>
+                        <p class="clase-desc">Alta intensidad, resultados máximos</p>
+                        <div class="clase-meta">
+                            <span class="badge">Intermedio/Avanzado</span>
+                            <span class="duration">60 min</span>
+                        </div>
+                        <button class="btn-secondary">VER HORARIOS</button>
+                    </div>
+                </div>
+
+                <div class="clase-card">
+                    <div class="clase-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMWMxYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNkOWZiMDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5TUElOTklORzwvdGV4dD48L3N2Zz4=')"></div>
+                    <div class="clase-content">
+                        <h3 class="clase-title">SPINNING</h3>
+                        <p class="clase-desc">Cardio explosivo con música</p>
+                        <div class="clase-meta">
+                            <span class="badge">Todos los niveles</span>
+                            <span class="duration">45 min</span>
+                        </div>
+                        <button class="btn-secondary">VER HORARIOS</button>
+                    </div>
+                </div>
+
+                <div class="clase-card">
+                    <div class="clase-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMWMxYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNkOWZiMDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5CT1hJTkc8L3RleHQ+PC9zdmc+')"></div>
+                    <div class="clase-content">
+                        <h3 class="clase-title">BOX/KICK BOXING</h3>
+                        <p class="clase-desc">Descargá energía mientras te ponés en forma</p>
+                        <div class="clase-meta">
+                            <span class="badge">Principiante/Intermedio</span>
+                            <span class="duration">50 min</span>
+                        </div>
+                        <button class="btn-secondary">VER HORARIOS</button>
+                    </div>
+                </div>
+
+                <div class="clase-card">
+                    <div class="clase-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMWMxYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNkOWZiMDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5ZT0dBPC90ZXh0Pjwvc3ZnPg==')"></div>
+                    <div class="clase-content">
+                        <h3 class="clase-title">YOGA/PILATES</h3>
+                        <p class="clase-desc">Flexibilidad, balance y mente clara</p>
+                        <div class="clase-meta">
+                            <span class="badge">Todos los niveles</span>
+                            <span class="duration">60 min</span>
+                        </div>
+                        <button class="btn-secondary">VER HORARIOS</button>
+                    </div>
+                </div>
+
+                <div class="clase-card">
+                    <div class="clase-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMWMxYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNkOWZiMDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5NVVNDVUxBQ0nDk048L3RleHQ+PC9zdmc+')"></div>
+                    <div class="clase-content">
+                        <h3 class="clase-title">MUSCULACIÓN</h3>
+                        <p class="clase-desc">Hipertrofia y fuerza con seguimiento</p>
+                        <div class="clase-meta">
+                            <span class="badge">Todos los niveles</span>
+                            <span class="duration">Variable</span>
+                        </div>
+                        <button class="btn-secondary">VER HORARIOS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes Section -->
+    <section class="section planes-section" id="planes">
+        <div class="container">
+            <h2 class="section-title">ELEGÍ TU PLAN</h2>
+            <div class="planes-grid">
+                <div class="plan-card">
+                    <div class="plan-badge">IDEAL PARA EMPEZAR</div>
+                    <h3 class="plan-name">PLAN FLEX</h3>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">8.900</span>
+                        <span class="period">/mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 2 veces por semana</li>
+                        <li>✓ Acceso a todas las clases</li>
+                        <li>✓ App para reservas</li>
+                        <li>✓ Sin matrícula</li>
+                    </ul>
+                    <button class="btn-secondary">EMPEZAR AHORA</button>
+                </div>
+
+                <div class="plan-card featured">
+                    <div class="plan-badge featured-badge">⭐ MÁS ELEGIDO</div>
+                    <h3 class="plan-name">PLAN FULL</h3>
+                    <div class="plan-price featured-price">
+                        <span class="currency">$</span>
+                        <span class="amount">14.900</span>
+                        <span class="period">/mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Acceso ILIMITADO</li>
+                        <li>✓ Todas las clases</li>
+                        <li>✓ App + seguimiento</li>
+                        <li>✓ Plan nutricional incluido</li>
+                        <li>✓ Descuento en productos</li>
+                        <li>✓ Sin matrícula</li>
+                    </ul>
+                    <button class="btn-primary">QUIERO ESTE</button>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-badge">RESULTADOS MÁXIMOS</div>
+                    <h3 class="plan-name">PLAN PERSONAL</h3>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">24.900</span>
+                        <span class="period">/mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Todo lo anterior +</li>
+                        <li>✓ 4 sesiones personalizadas/mes</li>
+                        <li>✓ Evaluación física mensual</li>
+                        <li>✓ Nutrición personalizada</li>
+                        <li>✓ Seguimiento 1 a 1</li>
+                    </ul>
+                    <button class="btn-secondary">CONTACTAR</button>
+                </div>
+            </div>
+            <p class="planes-note">💬 Consultá por promos y descuentos vigentes</p>
+            <div class="promo-floating">🔥 PROMO: Traé un amigo y entrenás GRATIS 1 mes</div>
+        </div>
+    </section>
+
+    <!-- Instalaciones Section -->
+    <section class="section instalaciones-section" id="instalaciones">
+        <div class="container">
+            <h2 class="section-title">NUESTRAS INSTALACIONES</h2>
+            <div class="instalaciones-grid">
+                <div class="instalacion-item">
+                    <div class="instalacion-image" style="background: linear-gradient(135deg, #1a1c1b 0%, #3f4816 100%); display: flex; align-items: center; justify-content: center; color: #d9fb06; font-size: 24px; font-weight: bold;">ZONA MUSCULACIÓN</div>
+                </div>
+                <div class="instalacion-item">
+                    <div class="instalacion-image" style="background: linear-gradient(135deg, #1a1c1b 0%, #3f4816 100%); display: flex; align-items: center; justify-content: center; color: #d9fb06; font-size: 24px; font-weight: bold;">ÁREA FUNCIONAL</div>
+                </div>
+                <div class="instalacion-item">
+                    <div class="instalacion-image" style="background: linear-gradient(135deg, #1a1c1b 0%, #3f4816 100%); display: flex; align-items: center; justify-content: center; color: #d9fb06; font-size: 24px; font-weight: bold;">VESTUARIOS</div>
+                </div>
+                <div class="instalacion-item">
+                    <div class="instalacion-image" style="background: linear-gradient(135deg, #1a1c1b 0%, #3f4816 100%); display: flex; align-items: center; justify-content: center; color: #d9fb06; font-size: 24px; font-weight: bold;">ZONA CARDIO</div>
+                </div>
+                <div class="instalacion-item">
+                    <div class="instalacion-image" style="background: linear-gradient(135deg, #1a1c1b 0%, #3f4816 100%); display: flex; align-items: center; justify-content: center; color: #d9fb06; font-size: 24px; font-weight: bold;">BOX/RING</div>
+                </div>
+                <div class="instalacion-item">
+                    <div class="instalacion-image" style="background: linear-gradient(135deg, #1a1c1b 0%, #3f4816 100%); display: flex; align-items: center; justify-content: center; color: #d9fb06; font-size: 24px; font-weight: bold;">EXTERIOR</div>
+                </div>
+            </div>
+            <div class="equipamiento-list">
+                <h3 class="equipamiento-title">Equipamiento</h3>
+                <ul class="equipamiento-items">
+                    <li>✓ Máquinas de última generación</li>
+                    <li>✓ Pesas libres</li>
+                    <li>✓ Zona de cardio</li>
+                    <li>✓ Vestuarios amplios con duchas</li>
+                    <li>✓ Casilleros individuales</li>
+                    <li>✓ WiFi gratis</li>
+                    <li>✓ Estacionamiento</li>
+                    <li>✓ Aire acondicionado</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformaciones Section -->
+    <section class="section transformaciones-section" id="transformaciones">
+        <div class="container">
+            <h2 class="section-title">RESULTADOS REALES</h2>
+            <div class="transformaciones-slider">
+                <div class="slider-wrapper">
+                    <div class="slider-container" id="sliderContainer">
+                        <div class="transformation-item">
+                            <div class="transformation-image">
+                                <div class="before-after">
+                                    <div class="before" style="background: linear-gradient(135deg, #302f2c 0%, #1a1c1b 100%); display: flex; align-items: center; justify-content: center; color: #888680;">ANTES</div>
+                                    <div class="after" style="background: linear-gradient(135deg, #3f4816 0%, #d9fb06 100%); display: flex; align-items: center; justify-content: center; color: #1a1c1b; font-weight: bold;">DESPUÉS</div>
+                                </div>
+                            </div>
+                            <div class="transformation-info">
+                                <h4 class="transformation-name">Martín • 32 años</h4>
+                                <p class="transformation-quote">"Perdí 15kg en 6 meses"</p>
+                                <p class="transformation-time">6 meses de entrenamiento</p>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+
+                        <div class="transformation-item">
+                            <div class="transformation-image">
+                                <div class="before-after">
+                                    <div class="before" style="background: linear-gradient(135deg, #302f2c 0%, #1a1c1b 100%); display: flex; align-items: center; justify-content: center; color: #888680;">ANTES</div>
+                                    <div class="after" style="background: linear-gradient(135deg, #3f4816 0%, #d9fb06 100%); display: flex; align-items: center; justify-content: center; color: #1a1c1b; font-weight: bold;">DESPUÉS</div>
+                                </div>
+                            </div>
+                            <div class="transformation-info">
+                                <h4 class="transformation-name">Carolina • 28 años</h4>
+                                <p class="transformation-quote">"Me siento más fuerte que nunca"</p>
+                                <p class="transformation-time">4 meses de entrenamiento</p>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+
+                        <div class="transformation-item">
+                            <div class="transformation-image">
+                                <div class="before-after">
+                                    <div class="before" style="background: linear-gradient(135deg, #302f2c 0%, #1a1c1b 100%); display: flex; align-items: center; justify-content: center; color: #888680;">ANTES</div>
+                                    <div class="after" style="background: linear-gradient(135deg, #3f4816 0%, #d9fb06 100%); display: flex; align-items: center; justify-content: center; color: #1a1c1b; font-weight: bold;">DESPUÉS</div>
+                                </div>
+                            </div>
+                            <div class="transformation-info">
+                                <h4 class="transformation-name">Javier • 45 años</h4>
+                                <p class="transformation-quote">"Recuperé mi energía y salud"</p>
+                                <p class="transformation-time">8 meses de entrenamiento</p>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn prev" id="sliderPrev">‹</button>
+                <button class="slider-btn next" id="sliderNext">›</button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+            <button class="btn-primary cta-transform">VOS TAMBIÉN PODÉS</button>
+        </div>
+    </section>
+
+    <!-- Beneficios Section -->
+    <section class="section beneficios-section">
+        <div class="container">
+            <h2 class="section-title">BENEFICIOS DE UNIRTE</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">🎁</div>
+                    <h3 class="beneficio-title">Primera Clase GRATIS</h3>
+                    <p class="beneficio-desc">Probá sin compromiso</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">📱</div>
+                    <h3 class="beneficio-title">App de Reservas</h3>
+                    <p class="beneficio-desc">Reservá desde tu celu</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">🥗</div>
+                    <h3 class="beneficio-title">Plan Nutricional</h3>
+                    <p class="beneficio-desc">Incluido en planes Full</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">📊</div>
+                    <h3 class="beneficio-title">Seguimiento</h3>
+                    <p class="beneficio-desc">Medí tu progreso</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">🏆</div>
+                    <h3 class="beneficio-title">Desafíos Mensuales</h3>
+                    <p class="beneficio-desc">Motivación constante</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-icon">👥</div>
+                    <h3 class="beneficio-title">Comunidad</h3>
+                    <p class="beneficio-desc">Entrenamiento en grupo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Necesito experiencia previa?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No necesitás experiencia previa. Tenemos clases para todos los niveles y nuestros entrenadores te guiarán desde el primer día.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué debo traer a la primera clase?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Traé ropa deportiva cómoda, zapatillas, una botella de agua y tu mejor actitud. Te prestamos una toalla.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Puedo pausar mi membresía?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, podés pausar tu membresía hasta 30 días por año sin costo adicional.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Hay duchas y vestuarios?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, contamos con vestuarios amplios, duchas con agua caliente y casilleros individuales.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Tienen estacionamiento?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, tenemos estacionamiento gratuito disponible para todos nuestros miembros.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="section contacto-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">RESERVÁ TU CLASE GRATIS</h2>
+            <div class="contacto-grid">
+                <div class="contacto-form-container">
+                    <form class="contacto-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono*</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Edad</label>
+                            <input type="number" id="age" name="age" min="16" max="99">
+                        </div>
+                        <div class="form-group">
+                            <label for="objetivo">Objetivo*</label>
+                            <select id="objetivo" name="objetivo" required>
+                                <option value="">Seleccioná tu objetivo</option>
+                                <option value="bajar-peso">Bajar de peso</option>
+                                <option value="tonificar">Tonificar</option>
+                                <option value="ganar-masa">Ganar masa muscular</option>
+                                <option value="mejorar-salud">Mejorar salud</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experiencia">Experiencia Previa*</label>
+                            <select id="experiencia" name="experiencia" required>
+                                <option value="">Seleccioná tu nivel</option>
+                                <option value="ninguna">Ninguna</option>
+                                <option value="poca">Poca</option>
+                                <option value="intermedia">Intermedia</option>
+                                <option value="avanzada">Avanzada</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" name="acepto" id="acepto">
+                                <span>Acepto recibir información de promos</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary btn-large">¡QUIERO MI CLASE GRATIS!</button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+                <div class="contacto-info">
+                    <div class="info-item">
+                        <a href="https://wa.me/5491112345678?text=Hola!%20Quiero%20info%20sobre%20la%20clase%20gratuita" class="btn-whatsapp" target="_blank">
+                            <span class="whatsapp-icon">📱</span>
+                            ESCRIBINOS POR WHATSAPP
+                        </a>
+                    </div>
+                    <div class="info-item">
+                        <h3>Teléfono</h3>
+                        <a href="tel:+5491112345678">+54 9 11 1234-5678</a>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <a href="mailto:info@powergym.com">info@powergym.com</a>
+                    </div>
+                    <div class="info-item">
+                        <h3>Instagram</h3>
+                        <a href="https://instagram.com/powergym" target="_blank">@powergym</a>
+                    </div>
+                    <div class="info-item">
+                        <h3>Dirección</h3>
+                        <p>Av. Corrientes 1234, CABA<br>Buenos Aires, Argentina</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Horarios</h3>
+                        <p>Lunes a Viernes: 6am - 10pm<br>Sábados: 8am - 2pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Section -->
+    <section class="section ubicacion-section">
+        <div class="container">
+            <h2 class="section-title">UBICACIÓN</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168882954845!2d-58.38375908519909!3d-34.60373446500258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaceb9a7dc2d%3A0x5d6c4e5c8f4e8c4e!2sAv.%20Corrientes%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="ubicacion-info">
+                <p><strong>Dirección:</strong> Av. Corrientes 1234, CABA, Buenos Aires</p>
+                <p><strong>Transporte:</strong> Colectivos: 60, 146, 168 | Subte: Línea B</p>
+                <p><strong>Estacionamiento:</strong> Zona de estacionamiento disponible</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">POWER GYM</div>
+                <p class="footer-tagline">Transformá tu vida</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#clases">Clases</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#instalaciones">Instalaciones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Horarios</h4>
+                <p>Lunes a Viernes<br>6:00 - 22:00</p>
+                <p>Sábados<br>8:00 - 14:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>Av. Corrientes 1234<br>Buenos Aires, Argentina</p>
+                <p>Tel: +54 9 11 1234-5678</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Power Gym. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5491112345678?text=Hola!%20Quiero%20info%20sobre%20la%20clase%20gratuita" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <span class="whatsapp-pulse"></span>
+        📱
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="clasico">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotisería El Buen Sabor - Comida Argentina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="logo_burguer.ico" />
+</head>
+<body>
+    <!-- Theme Selector -->
+    <div id="themeSelector" class="theme-selector">
+        <button id="themeSelectorBtn" class="theme-selector-btn" onclick="toggleThemeMenu()">
+            🎨
+        </button>
+        <div id="themeMenu" class="theme-menu">
+            <div class="theme-menu-header">Elegí un Tema</div>
+            <button class="theme-option" onclick="changeTheme('clasico')">
+                <span class="theme-preview" style="background: linear-gradient(135deg, #ea580c, #fed7aa);"></span>
+                <span>Clásico</span>
+            </button>
+            <button class="theme-option" onclick="changeTheme('oceano')">
+                <span class="theme-preview" style="background: linear-gradient(135deg, #0ea5e9, #bae6fd);"></span>
+                <span>Océano</span>
+            </button>
+            <button class="theme-option" onclick="changeTheme('naturaleza')">
+                <span class="theme-preview" style="background: linear-gradient(135deg, #10b981, #d1fae5);"></span>
+                <span>Naturaleza</span>
+            </button>
+            <button class="theme-option" onclick="changeTheme('elegante')">
+                <span class="theme-preview" style="background: linear-gradient(135deg, #8b5cf6, #ddd6fe);"></span>
+                <span>Elegante</span>
+            </button>
+            <button class="theme-option" onclick="changeTheme('nocturno')">
+                <span class="theme-preview" style="background: linear-gradient(135deg, #1f2937, #6b7280);"></span>
+                <span>Nocturno</span>
+            </button>
+            <button class="theme-option" onclick="changeTheme('fuego')">
+                <span class="theme-preview" style="background: linear-gradient(135deg, #dc2626, #fecaca);"></span>
+                <span>Fuego</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdminLogin()">&times;</span>
+            <h2>Acceso Administrador</h2>
+            <input type="password" id="adminPassword" placeholder="Contraseña" onkeypress="if(event.key==='Enter') adminLogin()">
+            <button onclick="adminLogin()" class="btn">Ingresar</button>
+            <p style="color: #6b7280; font-size: 0.85rem; margin-top: 1rem;">Contraseña predeterminada: admin123</p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <h2>🛠️ Panel de Administración</h2>
+            <button onclick="closeAdminPanel()" class="btn">Cerrar</button>
+        </div>
+        <div class="admin-content">
+            <!-- Sección de Categorías -->
+            <div class="admin-section">
+                <h3>📂 Gestionar Categorías</h3>
+                <div class="category-manager">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <input type="text" id="newCategoryId" placeholder="ID (ej: pizzas)" style="flex: 1;">
+                        <input type="text" id="newCategoryName" placeholder="Nombre (ej: Pizzas)" style="flex: 2;">
+                        <button onclick="addCategory()" class="btn">Agregar Categoría</button>
+                    </div>
+                    <div id="categoriesList"></div>
+                </div>
+            </div>
+
+            <!-- Sección de Productos -->
+            <div class="admin-section" id="editarRedirect">
+                <h3>🍴 Agregar/Editar Producto</h3>
+                <input type="hidden" id="editProductId">
+                <input type="hidden" id="editProductCategory">
+                <select id="productCategory">
+                    <option value="">Seleccioná una categoría</option>
+                </select>
+                <input type="text" id="productName" placeholder="Nombre del producto">
+                <input type="text" id="productDescription" placeholder="Descripción">
+                <input type="number" id="productPrice" placeholder="Precio">
+                
+                <label style="font-weight: 600; margin-top: 0.5rem; display: block;">Etiqueta del producto:</label>
+                <select id="productBadge">
+                    <option value="">Sin etiqueta</option>
+                    <option value="destacado">Destacado (Naranja)</option>
+                    <option value="popular">Popular (Rojo)</option>
+                    <option value="oferta">Oferta (Verde)</option>
+                </select>
+                
+                <button onclick="saveProduct()" class="btn" style="margin-top: 1rem;">Guardar Producto</button>
+                <button onclick="cancelEdit()" class="btn" style="background: #6b7280; margin-top: 1rem;">Cancelar</button>
+            </div>
+
+            <!-- Lista de Productos -->
+            <div class="admin-section">
+                <h3>📋 Productos Existentes</h3>
+                <div id="productsList"></div>
+            </div>
+
+            <!-- Cambiar Contraseña -->
+            <div class="admin-section">
+                <h3>🔐 Cambiar Contraseña</h3>
+                <input type="password" id="newPassword" placeholder="Nueva contraseña">
+                <input type="password" id="confirmPassword" placeholder="Confirmar contraseña">
+                <button onclick="changePassword()" class="btn">Cambiar Contraseña</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2">
+                    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                    <path d="M7 2v20"></path>
+                    <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                </svg>
+                <h1>Rotisería El Buen Sabor</h1>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation -->
+            <nav id="mainNav">
+                <a href="#menu" onclick="closeMobileMenu()">Menú</a>
+                <a href="#combos" onclick="closeMobileMenu()">Combos</a>
+                <a href="#como-comprar" onclick="closeMobileMenu()">Cómo Comprar</a>
+                <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+            </nav>
+            
+            <a href="https://wa.me/5491112345678?text=¡Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" class="btn btn-header">
+                📞 Pedí Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1712579733874-c3a79f0f9d12?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxwb2xsbyUyMGFzYWRvfGVufDB8fHx8MTc2NDcxNDA5OXww&ixlib=rb-4.1.0&q=85" alt="Pollo asado" class="hero-bg">
+        <div class="hero-content">
+            <h2>Sabor Auténtico Argentino</h2>
+            <p>Pollo al espiedo, empanadas y minutas caseras</p>
+            <a href="https://wa.me/5491112345678?text=¡Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" class="btn btn-lg">
+                📞 Pedí Ahora por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="bg-white">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="card">
+                    <div style="font-size: 3rem;">🏆</div>
+                    <h3>Calidad Premium</h3>
+                    <p>Ingredientes frescos y de primera</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 3rem;">⏰</div>
+                    <h3>Entregas Rápidas</h3>
+                    <p>Tu pedido en 30-45 minutos</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 3rem;">🛍️</div>
+                    <h3>Delivery o Take Away</h3>
+                    <p>Como vos prefieras</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 3rem;">👥</div>
+                    <h3>Catering para Eventos</h3>
+                    <p>Fiestas y reuniones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section (Dinámico) -->
+    <section id="menu" class="bg-orange">
+        <div class="container">
+            <h2 class="section-title">Nuestro Menú</h2>
+            <div id="dynamicMenu"></div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="bg-gradient">
+        <div class="container">
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1606728035253-49e8a23146de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHw0fHxwb2xsbyUyMGFzYWRvfGVufDB8fHx8MTc2NDcxNDA5OXww&ixlib=rb-4.1.0&q=85" alt="Pollo al Espiedo">
+                    <div class="gallery-overlay">
+                        <h3>Pollo al Espiedo</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1619926096619-5956ab4dfb1b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxlbXBhbmFkYXN8ZW58MHx8fHwxNzY0NzE0MTA1fDA&ixlib=rb-4.1.0&q=85" alt="Empanadas">
+                    <div class="gallery-overlay">
+                        <h3>Empanadas Caseras</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1599921841143-819065a55cc6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxzY2huaXR6ZWx8ZW58MHx8fHwxNzY0NzE0MTE3fDA&ixlib=rb-4.1.0&q=85" alt="Milanesas">
+                    <div class="gallery-overlay">
+                        <h3>Minutas</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Order -->
+    <section id="como-comprar" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">¿Cómo Comprar?</h2>
+            <p class="section-subtitle">Es muy fácil disfrutar de nuestra comida</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">🍽️</div>
+                    <h3>Paso 1</h3>
+                    <h4>Elegí tu plato</h4>
+                    <p>Mirá nuestro menú y elegí lo que más te guste</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📞</div>
+                    <h3>Paso 2</h3>
+                    <h4>Llamá o escribinos</h4>
+                    <p>Contactanos por teléfono o WhatsApp</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">🛍️</div>
+                    <h3>Paso 3</h3>
+                    <h4>Retirá o recibí</h4>
+                    <p>Retirá en el local o pedí delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule and Delivery -->
+    <section class="bg-orange">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="info-card">
+                    <h3>⏰ Horarios de Atención</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span><strong>Lunes a Viernes</strong></span>
+                            <span>11:00 - 15:00 / 18:00 - 23:00</span>
+                        </li>
+                        <li>
+                            <span><strong>Sábados</strong></span>
+                            <span>11:00 - 23:00</span>
+                        </li>
+                        <li>
+                            <span><strong>Domingos</strong></span>
+                            <span>11:00 - 23:00</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Zona de Delivery</h3>
+                    <p style="color: #6b7280; margin-bottom: 1rem;">Hacemos delivery en las siguientes zonas:</p>
+                    <ul class="delivery-list">
+                        <li>Centro</li>
+                        <li>Palermo</li>
+                        <li>Belgrano</li>
+                        <li>Recoleta</li>
+                        <li>Villa Urquiza</li>
+                    </ul>
+                    <p style="color: #9ca3af; font-size: 0.85rem; margin-top: 1rem;">*Consultá por otras zonas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <p class="section-subtitle">Miles de clientes satisfechos nos recomiendan</p>
+            <div class="grid grid-3">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"¡El mejor pollo de la zona! Siempre jugoso y bien condimentado. Lo pido todas las semanas."</p>
+                    <p class="testimonial-author">María González</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Las empanadas son espectaculares. Muy abundantes y sabrosas. Excelente atención."</p>
+                    <p class="testimonial-author">Carlos Rodríguez</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Delivery rápido y la comida llega caliente. Los combos tienen muy buen precio."</p>
+                    <p class="testimonial-author">Laura Martínez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section class="catering-section">
+        <div class="container">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">👥</div>
+            <h2 class="section-title">¿Tenés un Evento?</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; color: #4b5563;">
+                Hacemos catering para fiestas, cumpleaños, eventos corporativos y más. 
+                Consultanos por tu evento y te armamos un presupuesto a medida.
+            </p>
+            <a href="https://wa.me/5491112345678?text=Hola,%20quiero%20consultar%20por%20catering" target="_blank" class="btn btn-lg">
+                Consultá por Catering
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+                    <h3>Teléfono</h3>
+                    <p>+54 11 1234-5678</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">
+                        <svg width="50" height="50" fill="#25D366" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>+54 9 11 1234-5678</p>
+                </div>
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📍</div>
+                    <h3>Dirección</h3>
+                    <p>Av. Corrientes 1234, CABA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="bg-orange">
+        <div class="container">
+            <h2 class="section-title">Nuestra Ubicación</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.92816548321!2d-58.38156!3d-34.60373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM2JzEzLjQiUyA1OMKwMjInNTMuNiJX!5e0!3m2!1ses!2sar!4v1234567890" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2">
+                            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                            <path d="M7 2v20"></path>
+                            <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                        </svg>
+                        <h4>Rotisería El Buen Sabor</h4>
+                    </div>
+                    <p>Comida casera y de calidad desde hace más de 20 años.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#menu">Menú</a></li>
+                        <li><a href="#combos">Combos</a></li>
+                        <li><a href="#como-comprar">Cómo Comprar</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Métodos de Pago</h4>
+                    <p style="margin-bottom: 0.5rem;">Aceptamos:</p>
+                    <ul>
+                        <li>• Efectivo</li>
+                        <li>• Tarjetas de débito y crédito</li>
+                        <li>• Transferencias</li>
+                        <li>• Mercado Pago</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="cursor: pointer;" onclick="openAdminLogin()">&copy; 2025 Rotisería El Buen Sabor. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5491112345678?text=¡Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

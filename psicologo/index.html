@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultorios de Psicología - Un espacio seguro para tu bienestar emocional">
+    <title>[NOMBRE_COMPLETO] - Psicólogo/a en Argentina</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- GUÍA DE PERSONALIZACIÓN:
+         Busca y reemplaza los siguientes valores:
+         [NOMBRE_COMPLETO] - Tu nombre completo
+         [MATRICULA_PROFESIONAL] - Tu número de matrícula
+         [ENFOQUE_TERAPEUTICO] - Tu enfoque (Ej: Cognitivo-Conductual)
+         [UNIVERSIDAD] - Universidad donde te graduaste
+         [AÑOS_EXPERIENCIA] - Años de experiencia
+         [WHATSAPP] - Número de WhatsApp (formato: 5491234567890)
+         [TELEFONO] - Teléfono de contacto
+         [EMAIL] - Email de contacto
+         [DIRECCION_CONSULTORIO] - Dirección física
+         [LINK_GOOGLE_MAPS] - Link de Google Maps
+         [PRECIO_SESION_INDIVIDUAL] - Precio sesión individual
+         [PRECIO_TERAPIA_PAREJA] - Precio terapia de pareja
+         [OBRAS_SOCIALES] - Lista de obras sociales
+         [INSTAGRAM] - Usuario de Instagram (opcional)
+    -->
+
+    <!-- THEME SWITCHER -->
+    <div class="theme-switcher" id="themeSwitcher">
+        <button class="theme-btn" aria-label="Cambiar tema">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        </button>
+        <div class="theme-options" id="themeOptions">
+            <button class="theme-option" data-theme="default">
+                <div class="theme-preview theme-preview-default"></div>
+                <span>Azul Sereno</span>
+            </button>
+            <button class="theme-option" data-theme="nature">
+                <div class="theme-preview theme-preview-nature"></div>
+                <span>Verde Natural</span>
+            </button>
+            <button class="theme-option" data-theme="warm">
+                <div class="theme-preview theme-preview-warm"></div>
+                <span>Tierra Cálido</span>
+            </button>
+            <button class="theme-option" data-theme="professional">
+                <div class="theme-preview theme-preview-professional"></div>
+                <span>Púrpura Profesional</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h2>[NOMBRE_COMPLETO]</h2>
+                    <span class="subtitle">Lic. en Psicología</span>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                        <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                        <li><a href="#especialidades" class="nav-link">Especialidades</a></li>
+                        <li><a href="#honorarios" class="nav-link">Honorarios</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                    <a href="#contacto" class="btn-cta">Solicitar Turno</a>
+                </nav>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%234A90E2'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='80' fill='white'%3EFoto%3C/text%3E%3C/svg%3E" alt="[NOMBRE_COMPLETO]" class="profile-photo">
+                </div>
+                <h1 class="hero-title">[NOMBRE_COMPLETO]</h1>
+                <p class="hero-subtitle">Lic. en Psicología • MP: [MATRICULA_PROFESIONAL]</p>
+                <p class="hero-tagline">Un espacio seguro para tu bienestar emocional</p>
+                <p class="hero-description">Terapia individual, de pareja y online</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Solicitar Primer Turno</a>
+                    <a href="#sobre-mi" class="btn btn-secondary">Conocé más</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="sobre-mi" id="sobre-mi">
+        <div class="container">
+            <div class="sobre-mi-grid">
+                <div class="sobre-mi-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect width='400' height='500' fill='%234A90E2'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='40' fill='white'%3EFoto Profesional%3C/text%3E%3C/svg%3E" alt="Sobre mí" class="fade-in">
+                </div>
+                <div class="sobre-mi-content fade-in">
+                    <h2 class="section-title">Sobre Mí</h2>
+                    <p class="sobre-mi-text">
+                        Bienvenido/a. Mi nombre es [NOMBRE_COMPLETO] y soy psicólogo/a especializado/a en acompañar personas en sus procesos de cambio y crecimiento personal. Creo firmemente en la capacidad de cada persona para superar las dificultades que enfrenta y alcanzar una vida más plena y satisfactoria.
+                    </p>
+                    <p class="sobre-mi-text">
+                        Mi objetivo es brindarte un espacio de escucha, contención y reflexión, donde puedas explorar tus emociones, pensamientos y conductas en un ambiente de total confidencialidad y respeto.
+                    </p>
+                    <div class="sobre-mi-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon">🎓</div>
+                            <div class="stat-content">
+                                <h4>[UNIVERSIDAD]</h4>
+                                <p>Licenciatura en Psicología</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">📅</div>
+                            <div class="stat-content">
+                                <h4>[AÑOS_EXPERIENCIA] años</h4>
+                                <p>De experiencia profesional</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">📜</div>
+                            <div class="stat-content">
+                                <h4>Matrícula MP: [MATRICULA_PROFESIONAL]</h4>
+                                <p>Colegio de Psicólogos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="enfoque">
+                        <p><strong>Enfoque Terapéutico:</strong> Trabajo desde un enfoque [ENFOQUE_TERAPEUTICO], integrando técnicas que se adaptan a las necesidades particulares de cada paciente.</p>
+                    </div>
+                    <blockquote class="quote">
+                        "La terapia es un proceso colaborativo donde juntos exploramos nuevas formas de entender y afrontar los desafíos de la vida."
+                    </blockquote>
+                    <div class="valores">
+                        <div class="valor-badge">Empatía</div>
+                        <div class="valor-badge">Confidencialidad</div>
+                        <div class="valor-badge">Respeto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section class="especialidades" id="especialidades">
+        <div class="container">
+            <h2 class="section-title centered">Especialidades</h2>
+            <p class="section-description">Áreas en las que puedo ayudarte</p>
+            <div class="especialidades-grid">
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">💭</div>
+                    <h3>Ansiedad y Estrés</h3>
+                    <p>Manejo de la ansiedad, ataques de pánico y técnicas de relajación para recuperar el equilibrio emocional.</p>
+                </div>
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">🌧️</div>
+                    <h3>Depresión</h3>
+                    <p>Acompañamiento en procesos depresivos, mejorando el estado de ánimo y recuperando la motivación.</p>
+                </div>
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">💑</div>
+                    <h3>Terapia de Pareja</h3>
+                    <p>Fortalecimiento del vínculo, comunicación efectiva y resolución de conflictos en la pareja.</p>
+                </div>
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">🔄</div>
+                    <h3>Crisis Vitales</h3>
+                    <p>Apoyo en momentos de cambio, transiciones de vida y situaciones de crisis personal.</p>
+                </div>
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">🎯</div>
+                    <h3>Orientación Vocacional</h3>
+                    <p>Acompañamiento en la elección de carrera y proyecto de vida profesional.</p>
+                </div>
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">🍽️</div>
+                    <h3>Trastornos Alimentarios</h3>
+                    <p>Tratamiento de anorexia, bulimia y otros trastornos de la conducta alimentaria.</p>
+                </div>
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">🕊️</div>
+                    <h3>Duelo y Pérdidas</h3>
+                    <p>Proceso de elaboración del duelo ante pérdidas significativas y cambios vitales.</p>
+                </div>
+                <div class="especialidad-card fade-in">
+                    <div class="especialidad-icon">⭐</div>
+                    <h3>Autoestima</h3>
+                    <p>Desarrollo de una imagen positiva de sí mismo y fortalecimiento de la confianza personal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALIDAD DE TRABAJO -->
+    <section class="modalidad">
+        <div class="container">
+            <h2 class="section-title centered">Modalidad de Trabajo</h2>
+            <div class="modalidad-grid">
+                <div class="modalidad-card fade-in">
+                    <div class="modalidad-icon">🏢</div>
+                    <h3>Atención Presencial</h3>
+                    <div class="badge-disponible">Disponible</div>
+                    <p>Sesiones en consultorio ubicado en [DIRECCION_CONSULTORIO], en un ambiente cálido, privado y profesional.</p>
+                    <ul class="modalidad-beneficios">
+                        <li>Atención personalizada</li>
+                        <li>Espacio confidencial</li>
+                        <li>Ambiente acogedor</li>
+                    </ul>
+                </div>
+                <div class="modalidad-card fade-in">
+                    <div class="modalidad-icon">💻</div>
+                    <h3>Terapia Online</h3>
+                    <div class="badge-disponible">Disponible</div>
+                    <p>Sesiones por videollamada desde la comodidad de tu hogar. Misma calidad profesional, mayor flexibilidad.</p>
+                    <ul class="modalidad-beneficios">
+                        <li>Desde cualquier lugar</li>
+                        <li>Mayor flexibilidad horaria</li>
+                        <li>100% confidencial</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-adicional">
+                <div class="info-item">
+                    <strong>Duración de sesión:</strong> 50 minutos
+                </div>
+                <div class="info-item">
+                    <strong>Frecuencia:</strong> Semanal (recomendado)
+                </div>
+                <div class="info-item">
+                    <strong>Primera sesión:</strong> Entrevista de evaluación
+                </div>
+            </div>
+            <p class="politica-cancelacion">Política de cancelación: Por favor, avisar con 24hs de anticipación en caso de no poder asistir a la sesión programada.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title centered">Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuándo es recomendable consultar a un psicólogo?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Es recomendable consultar cuando sientas que tus emociones, pensamientos o comportamientos están afectando tu calidad de vida, tus relaciones o tu bienestar general. No es necesario esperar a tener un problema grave.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuánto dura una sesión?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cada sesión tiene una duración de 50 minutos. Este tiempo permite trabajar de manera profunda y efectiva en los temas que necesites abordar.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuántas sesiones voy a necesitar?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El número de sesiones varía según cada persona y sus objetivos terapéuticos. Algunas consultas puntuales pueden resolverse en pocas sesiones, mientras que otros procesos requieren un acompañamiento más prolongado. Lo evaluaremos juntos en las primeras sesiones.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Trabajás con obra social?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, trabajo con las siguientes obras sociales: [OBRAS_SOCIALES]. También puedo brindarte la documentación necesaria para que realices el reintegro según tu cobertura.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo es la primera sesión?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La primera sesión es una entrevista de evaluación donde conoceré tu situación actual, tus motivos de consulta y tus expectativas. También te explicaré cómo trabajo y acordaremos juntos los objetivos terapéuticos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿La terapia es confidencial?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Todo lo que se habla en terapia está protegido por el secreto profesional. La confidencialidad es uno de los pilares fundamentales del proceso terapéutico.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Atendés online?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, ofrezco sesiones online a través de videollamada para quienes prefieren esta modalidad o no pueden asistir presencialmente. La calidad del servicio es la misma que en las sesiones presenciales.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo sé si es el momento de pedir ayuda?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Si te encuentras pensando en la posibilidad de hacer terapia, probablemente sea un buen momento. No es necesario estar en crisis para consultar. La terapia también es un espacio de autoconocimiento y crecimiento personal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HONORARIOS -->
+    <section class="honorarios" id="honorarios">
+        <div class="container">
+            <h2 class="section-title centered">Honorarios y Obras Sociales</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card fade-in">
+                    <h3>Sesión Individual</h3>
+                    <div class="price">$22.000</div>
+                    <p>50 minutos</p>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <h3>Primera Consulta</h3>
+                    <div class="price">$120.000</div>
+                    <p>Entrevista de evaluación</p>
+                </div>
+                <div class="pricing-card fade-in">
+                    <h3>Terapia de Pareja</h3>
+                    <div class="price">$8.000</div>
+                    <p>60 minutos</p>
+                </div>
+            </div>
+            <div class="obras-sociales">
+                <h3>Obras Sociales Aceptadas</h3>
+                <p class="obras-lista">[OBRAS_SOCIALES]</p>
+                <p class="obras-nota"><strong>Nota:</strong> También acepto reintegros. Te proporciono toda la documentación necesaria.</p>
+            </div>
+            <div class="formas-pago">
+                <h4>Formas de Pago</h4>
+                <div class="pago-badges">
+                    <span class="pago-badge">💵 Efectivo</span>
+                    <span class="pago-badge">🏦 Transferencia</span>
+                    <span class="pago-badge">💳 MercadoPago</span>
+                </div>
+            </div>
+            <p class="nota-orientativa">*Los valores son orientativos. En la primera consulta evaluamos tu situación particular.</p>
+            <div class="cta-center">
+                <a href="#contacto" class="btn btn-primary">Consultá Disponibilidad</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios">
+        <div class="container">
+            <h2 class="section-title centered">Testimonios</h2>
+            <div class="testimonios-slider">
+                <div class="testimonio-slide active">
+                    <div class="testimonio-content">
+                        <div class="quote-marks">"</div>
+                        <p>Después de varios meses de terapia, finalmente siento que recuperé la confianza en mí misma. El acompañamiento profesional y empático fue clave en mi proceso.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonio-author">— Paciente anónima, 32 años</p>
+                    </div>
+                </div>
+                <div class="testimonio-slide">
+                    <div class="testimonio-content">
+                        <div class="quote-marks">"</div>
+                        <p>La terapia de pareja nos ayudó a comunicarnos mejor y a entender las necesidades del otro. Estamos muy agradecidos por el espacio brindado.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonio-author">— Pareja anónima</p>
+                    </div>
+                </div>
+                <div class="testimonio-slide">
+                    <div class="testimonio-content">
+                        <div class="quote-marks">"</div>
+                        <p>Las sesiones online fueron una excelente opción para mí. Pude mantener mi proceso terapéutico sin complicaciones de traslado y con total profesionalismo.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonio-author">— Paciente anónimo, 28 años</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="section-title centered">Contacto</h2>
+            <p class="section-description">Solicitá tu turno o haceme una consulta</p>
+            <div class="contacto-grid">
+                <div class="contacto-form-container fade-in">
+                    <form class="contacto-form" id="contactoForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <span class="error-message" id="nombreError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                            <span class="error-message" id="telefonoError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad</label>
+                            <input type="number" id="edad" name="edad" min="0" max="120">
+                        </div>
+                        <div class="form-group">
+                            <label for="motivo">Motivo de consulta *</label>
+                            <textarea id="motivo" name="motivo" rows="4" placeholder="Contame brevemente qué te gustaría trabajar..." required></textarea>
+                            <span class="error-message" id="motivoError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferencia de atención *</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="preferencia" value="presencial" checked>
+                                    <span>Presencial</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="preferencia" value="online">
+                                    <span>Online</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <span class="btn-text">Solicitar Turno</span>
+                            <span class="btn-loader" style="display: none;">Enviando...</span>
+                        </button>
+                        <p class="privacy-note">🔒 Tus datos son confidenciales y seguros</p>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">✓</div>
+                        <h3>¡Solicitud enviada!</h3>
+                        <p>Gracias por contactarme. Te responderé a la brevedad para coordinar tu turno.</p>
+                    </div>
+                </div>
+                <div class="contacto-info fade-in">
+                    <a href="https://wa.me/[WHATSAPP]?text=Hola,%20me%20gustaría%20consultar%20por%20un%20turno%20para%20terapia" class="whatsapp-btn" target="_blank" rel="noopener">
+                        <span class="whatsapp-icon">📱</span>
+                        <span>Escribime por WhatsApp</span>
+                    </a>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p><a href="tel:[TELEFONO]">[TELEFONO]</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:[EMAIL]">[EMAIL]</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <strong>Dirección</strong>
+                            <p>[DIRECCION_CONSULTORIO]</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🕐</div>
+                        <div>
+                            <strong>Horarios de Atención</strong>
+                            <p>Lunes a Viernes: 9:00 - 20:00hs</p>
+                            <p>Sábados: 9:00 - 14:00hs</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noopener" class="social-link">📷 Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="ubicacion" id="ubicacion">
+        <div class="container">
+            <h2 class="section-title centered">Ubicación</h2>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.532474641768!2d-58.43!3d-34.60!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM2JzAwLjAiUyA1OMKwMjUnNDguMCJX!5e0!3m2!1ses!2sar!4v1234567890" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="ubicacion-info">
+                <p><strong>Dirección:</strong> [DIRECCION_CONSULTORIO]</p>
+                <p><strong>Cómo llegar:</strong> Colectivos: líneas 10, 37, 59, 152. Subte: Línea D.</p>
+                <a href="[LINK_GOOGLE_MAPS]" target="_blank" rel="noopener" class="btn btn-secondary">Ver en Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>[NOMBRE_COMPLETO]</h3>
+                    <p>Lic. en Psicología</p>
+                    <p>MP: [MATRICULA_PROFESIONAL]</p>
+                    <p class="footer-description">Un espacio profesional dedicado a tu bienestar emocional y crecimiento personal.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#honorarios">Honorarios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>📞 <a href="tel:[TELEFONO]">[TELEFONO]</a></li>
+                        <li>✉️ <a href="mailto:[EMAIL]">[EMAIL]</a></li>
+                        <li>📍 [DIRECCION_CONSULTORIO]</li>
+                        <li>📷 <a href="https://instagram.com/[INSTAGRAM]" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 [NOMBRE_COMPLETO] | Todos los derechos reservados</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a> | 
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/[WHATSAPP]?text=Hola,%20me%20gustaría%20consultar%20por%20un%20turno%20para%20terapia" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener"
+       aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M16 0C7.164 0 0 7.163 0 16c0 2.826.739 5.482 2.027 7.773L.707 29.707a1 1 0 0 0 1.32 1.32l6.076-1.346A15.918 15.918 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29c-2.7 0-5.277-.828-7.476-2.313a1 1 0 0 0-.812-.115l-4.606 1.02 1.036-4.392a1 1 0 0 0-.119-.812A12.958 12.958 0 0 1 3 16C3 8.82 8.82 3 16 3s13 5.82 13 13-5.82 13-13 13z"/>
+            <path fill="currentColor" d="M22.968 18.506c-.335-.168-1.988-.98-2.296-1.092-.308-.112-.532-.168-.756.168-.224.335-.868 1.092-1.064 1.316-.196.224-.392.252-.727.084-.335-.168-1.414-.521-2.693-1.662-.996-.888-1.668-1.985-1.864-2.32-.196-.336-.021-.517.147-.684.151-.15.335-.392.503-.588.168-.196.224-.336.336-.56.112-.224.056-.42-.028-.588-.084-.168-.756-1.824-1.036-2.497-.273-.656-.55-.567-.756-.577-.196-.009-.42-.01-.644-.01s-.588.083-.896.418c-.308.336-1.176 1.148-1.176 2.801s1.204 3.248 1.372 3.472c.168.224 2.371 3.62 5.746 5.076.803.347 1.43.554 1.918.709.806.256 1.54.22 2.12.133.647-.097 1.988-.812 2.268-1.596.28-.784.28-1.456.196-1.596-.084-.14-.308-.224-.644-.392z"/>
+        </svg>
+        <span class="whatsapp-tooltip">Consultá por WhatsApp</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
