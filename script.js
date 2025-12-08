@@ -195,6 +195,8 @@ function renderServices() {
             </div>
             <div class="service-price">${service.price}</div>
             <p class="service-description">${service.description}</p>
+            <span>Haz clic para ver más</span>
+
             
             <div class="service-details">
                 <div class="service-includes">
@@ -213,6 +215,7 @@ function renderServices() {
                         <span>${service.ideal}</span>
                     </div>
                 </div>
+                
                 <button class="service-btn" onclick="selectService(${service.id})">Solicitar este servicio</button>
             </div>
         </div>
@@ -460,6 +463,7 @@ function initThemeSelector() {
         });
     });
 }
+
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);

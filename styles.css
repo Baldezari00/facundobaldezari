@@ -334,7 +334,7 @@ p {
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
     gap: 4rem;
     align-items: center;
     max-width: 1200px;
@@ -900,6 +900,10 @@ p {
     flex-wrap: wrap;
 }
 
+span{
+    font-size: smaller;
+}
+
 .portfolio-tech span {
     padding: 0.25rem 0.75rem;
     background: var(--gray-light);
@@ -1383,7 +1387,9 @@ p {
     transform: scale(1.1);
     box-shadow: var(--shadow-xl);
 }
-
+.themeClick{
+    
+}
 .theme-icon {
     font-size: 1.5rem;
 }
