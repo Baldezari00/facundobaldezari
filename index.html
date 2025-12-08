@@ -3,236 +3,641 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facundo Baldezari - Desarrollo Web</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 60px;
-            animation: fadeInDown 0.8s ease;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            animation: fadeInUp 0.8s ease;
-            animation-fill-mode: both;
-        }
-
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.2s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
-
-        .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-        }
-
-        .project-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .project-card h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .project-card p {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .project-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .project-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .footer {
-            text-align: center;
-            color: white;
-            animation: fadeIn 1s ease 0.5s both;
-        }
-
-        .footer p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            color: white;
-            text-decoration: none;
-            padding: 10px 25px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-link:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-3px);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .header p {
-                font-size: 1.1rem;
-            }
-
-            .project-card h2 {
-                font-size: 1.6rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    
+    <!-- SEO Meta Tags -->
+    <title>Facundo Baldezari | Desarrollo Web en Mar del Plata | Páginas para Negocios desde $30.000</title>
+    <meta name="description" content="Desarrollo páginas web profesionales para negocios en Mar del Plata. Rotiserías, psicólogos, gimnasios, tiendas online. Responsive, modernas y económicas. Desde $30.000. Entrega en 7 días.">
+    <meta name="keywords" content="desarrollo web mar del plata, páginas web argentina, diseño web económico, landing page, sitio web para negocios, programador web, página para rotisería, web para psicólogos">
+    <meta name="author" content="Facundo Baldezari">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://facundobaldezari.com.ar">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Desarrollo Web Profesional | Facundo Baldezari">
+    <meta property="og:description" content="Páginas web modernas para tu negocio. Responsive, rápidas y económicas. Desde $30.000">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://facundobaldezari.com.ar">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Desarrollo Web | Facundo Baldezari">
+    <meta name="twitter:description" content="Páginas web profesionales para negocios. Desde $30.000">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Facundo Baldezari - Desarrollo Web",
+      "description": "Desarrollo de páginas web profesionales para negocios",
+      "url": "https://facundobaldezari.com.ar",
+      "telephone": "+542235254889",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "priceRange": "$30000-$200000",
+      "openingHours": "Mo-Fr 09:00-20:00"
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Facundo Baldezari</h1>
-            <p>Desarrollo Web para Negocios</p>
+    <!-- Header / Navigation -->
+    <header id="header">
+        <nav class="nav-container">
+            <div class="logo">FB</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/5492235254889?text=Hola!%20Me%20interesa%20cotizar%20una%20p%C3%A1gina%20web" class="btn-primary nav-cta" target="_blank" rel="noopener">Cotizar Proyecto</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-container">
+                <div class="hero-content fade-in">
+                    <h1 class="hero-title">Desarrollo Web Profesional para Tu Negocio</h1>
+                    <p class="hero-subtitle">Páginas web modernas, responsive y optimizadas para convertir visitantes en clientes</p>
+                    <div class="hero-badges">
+                        <div class="badge">
+                            <span class="badge-icon">⚡</span>
+                            <span>Entrega en 5-7 días</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">💰</span>
+                            <span>Desde $30.000</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">📱</span>
+                            <span>100% Responsive</span>
+                        </div>
+                    </div>
+                    <div class="hero-ctas">
+                        <a href="#calculadora" class="btn-primary btn-large">Ver Precios</a>
+                        <a href="https://wa.me/5492235254889?text=Hola!%20Me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" class="btn-outline btn-large" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in">
+                    <div class="mockup-container">
+                        <div class="mockup-device">
+                            <div class="mockup-screen"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora de Servicios -->
+        <section id="calculadora" class="calculator-section">
+            <div class="container">
+                <h2 class="section-title">¿Cuánto Cuesta Tu Página Web?</h2>
+                <p class="section-subtitle">Calculá tu presupuesto en segundos según el tipo de proyecto</p>
+                
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Los servicios se cargarán dinámicamente con JavaScript -->
+                </div>
+
+                <div class="extras-section" id="extrasSection" style="display: none;">
+                    <h3>Agregá Funcionalidades Extra</h3>
+                    <div class="extras-grid">
+                        <label class="extra-checkbox">
+                            <input type="checkbox" data-price="15000" data-name="Panel de administración">
+                            <span>Panel de administración <strong>+$15.000</strong></span>
+                        </label>
+                        <label class="extra-checkbox">
+                            <input type="checkbox" data-price="5000" data-name="Integración con redes sociales">
+                            <span>Integración con redes sociales <strong>+$5.000</strong></span>
+                        </label>
+                        <label class="extra-checkbox">
+                            <input type="checkbox" data-price="20000" data-name="Blog integrado">
+                            <span>Blog integrado <strong>+$20.000</strong></span>
+                        </label>
+                        <label class="extra-checkbox">
+                            <input type="checkbox" data-price="25000" data-name="Sistema de reservas/turnos">
+                            <span>Sistema de reservas/turnos <strong>+$25.000</strong></span>
+                        </label>
+                        <label class="extra-checkbox">
+                            <input type="checkbox" data-price="30000" data-name="Integración MercadoPago">
+                            <span>Integración MercadoPago <strong>+$30.000</strong></span>
+                        </label>
+                        <label class="extra-checkbox">
+                            <input type="checkbox" data-price="10000" data-name="Email corporativo">
+                            <span>Email corporativo <strong>+$10.000</strong></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="price-total" id="priceTotal" style="display: none;">
+                    <div class="total-container">
+                        <span class="total-label">Presupuesto Total:</span>
+                        <span class="total-price" id="totalPrice">$0</span>
+                    </div>
+                    <button class="btn-primary btn-large" id="requestQuoteBtn">Solicitar Presupuesto por WhatsApp</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Por Qué Elegirme -->
+        <section id="servicios" class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">¿Por Qué Trabajar Conmigo?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Entrega Rápida</h3>
+                        <p>Tu página online en 5-10 días, no semanas</p>
+                    </div>
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">💰</div>
+                        <h3>Precios Accesibles</h3>
+                        <p>Sin costos ocultos ni mensualidades sorpresa</p>
+                    </div>
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">📱</div>
+                        <h3>100% Responsive</h3>
+                        <p>Se ve perfecto en celulares, tablets y computadoras</p>
+                    </div>
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">🎨</div>
+                        <h3>Diseño Moderno</h3>
+                        <p>Diseños actuales que generan confianza</p>
+                    </div>
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">🔧</div>
+                        <h3>Fácil de Actualizar</h3>
+                        <p>Panel admin simple para que actualices vos mismo</p>
+                    </div>
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">🤝</div>
+                        <h3>Soporte Incluido</h3>
+                        <p>Ayuda post-entrega sin cargo extra</p>
+                    </div>
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">🚀</div>
+                        <h3>SEO Optimizado</h3>
+                        <p>Configurado para aparecer en Google</p>
+                    </div>
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">✅</div>
+                        <h3>Garantía</h3>
+                        <p>Revisiones ilimitadas hasta que estés 100% conforme</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de Trabajo -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">Cómo Trabajamos</h2>
+                <div class="timeline">
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h3>Contacto</h3>
+                            <p class="timeline-title">Me contás tu idea</p>
+                            <ul class="timeline-list">
+                                <li>Por WhatsApp, email o formulario</li>
+                                <li>Te hago preguntas clave</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h3>Presupuesto</h3>
+                            <p class="timeline-title">Recibís cotización detallada</p>
+                            <ul class="timeline-list">
+                                <li>En 24hs máximo</li>
+                                <li>Sin compromiso</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h3>Diseño</h3>
+                            <p class="timeline-title">Creamos tu página</p>
+                            <ul class="timeline-list">
+                                <li>Con tus colores, textos e imágenes</li>
+                                <li>Te mostramos avances</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h3>Revisión</h3>
+                            <p class="timeline-title">Ajustes y cambios</p>
+                            <ul class="timeline-list">
+                                <li>Modificaciones ilimitadas</li>
+                                <li>Hasta que estés 100% conforme</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h3>Entrega</h3>
+                            <p class="timeline-title">¡Tu página online!</p>
+                            <ul class="timeline-list">
+                                <li>Dominio configurado</li>
+                                <li>Hosting activo</li>
+                                <li>Capacitación incluida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2 class="section-title">Proyectos Recientes</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card scroll-reveal">
+                        <div class="portfolio-image">
+                            <div class="portfolio-mockup"></div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Rotisería</span>
+                            <h3>Rotisería El Buen Sabor</h3>
+                            <p>Landing page con menú dinámico y sistema de pedidos por WhatsApp</p>
+                            <div class="portfolio-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <p class="portfolio-result">+40% de consultas en 2 meses</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card scroll-reveal">
+                        <div class="portfolio-image">
+                            <div class="portfolio-mockup"></div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Psicología</span>
+                            <h3>Consultorio Dra. Martínez</h3>
+                            <p>Sitio profesional con información de servicios y formulario de contacto</p>
+                            <div class="portfolio-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <p class="portfolio-result">Presencia profesional online</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card scroll-reveal">
+                        <div class="portfolio-image">
+                            <div class="portfolio-mockup"></div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Contabilidad</span>
+                            <h3>Estudio Contable Pérez</h3>
+                            <p>Landing page corporativa con información de servicios y testimonios</p>
+                            <div class="portfolio-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <p class="portfolio-result">Más credibilidad y confianza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Lo Que Dicen Mis Clientes</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Facundo me armó la página de mi rotisería en una semana. Súper profesional y el panel para actualizar el menú es muy fácil de usar."</p>
+                        <p class="testimonial-author">— Carlos R., Dueño de Rotisería El Buen Sabor</p>
+                    </div>
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Excelente trabajo. La página de mi consultorio quedó impecable y ya estoy recibiendo más consultas. 100% recomendable."</p>
+                        <p class="testimonial-author">— Dra. Laura M., Psicóloga</p>
+                    </div>
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Rápido, económico y con muy buen resultado. Quedé re conforme con mi landing page."</p>
+                        <p class="testimonial-author">— Juan P., Contador Público</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="faq-accordion" id="faqAccordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Cuánto demora el desarrollo?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Depende del tipo de proyecto. Una landing page simple toma 3-5 días, mientras que un e-commerce completo puede llevar 15-20 días. Te doy un tiempo estimado exacto cuando me contás tu proyecto.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Incluye el dominio y hosting?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, el primer año de dominio y hosting está incluido sin cargo adicional. Después podés renovarlo vos mismo o te ayudo con eso.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Puedo actualizar el contenido yo mismo?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>¡Absolutamente! Te entrego un panel de administración súper simple donde podés cambiar textos, imágenes, precios, etc. sin necesidad de programar. Y te capacito para que sepas usarlo.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Qué pasa si no me gusta algo?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Hacemos todas las revisiones necesarias hasta que estés 100% conforme. No hay límite de cambios durante el desarrollo.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Tiene costo de mantenimiento mensual?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No hay costos mensuales obligatorios. Solo pagás el hosting anual (muy económico) y podés manejarlo vos mismo. Si querés que yo haga actualizaciones o cambios después, lo coordinamos puntualmente.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Qué datos necesitás para empezar?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Básicamente: textos que querés que diga la página, tu logo (si tenés), fotos o imágenes, y tus colores de marca. Si no tenés todo, te ayudo a conseguirlo o crearlo.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Hacés páginas para cualquier tipo de negocio?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, trabajo con todo tipo de negocios y profesionales: rotiserías, psicólogos, abogados, gimnasios, talleres, tiendas online, etc. Cada página se adapta 100% a tu negocio.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Ofrecés soporte post-entrega?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, incluyo 30 días de soporte técnico gratis después de la entrega. Si tenés alguna duda o problema, estoy disponible por WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Listo Para Tener Tu Página Web?</h2>
+                <p class="cta-subtitle">Empezamos hoy y en una semana está online</p>
+                <div class="cta-buttons">
+                    <a href="#calculadora" class="btn-primary btn-large">Calcular Mi Presupuesto</a>
+                    <a href="https://wa.me/5492235254889?text=Hola!%20Quiero%20tener%20mi%20p%C3%A1gina%20web.%20%C2%BFCu%C3%A1ndo%20podemos%20empezar%3F" class="btn-outline btn-large btn-white" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Hablemos de Tu Proyecto</h2>
+                <div class="contact-grid">
+                    <div class="contact-form-container scroll-reveal">
+                        <form id="contactForm" action="https://formsubmit.co/facundobaldezari@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="Nueva consulta desde la web">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            
+                            <div class="form-group">
+                                <label for="name">Nombre *</label>
+                                <input type="text" id="name" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="telefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="project">Tipo de proyecto</label>
+                                <select id="project" name="tipo_proyecto">
+                                    <option value="">Seleccioná una opción</option>
+                                    <option value="landing">Landing Page Simple</option>
+                                    <option value="corporativo">Sitio Corporativo</option>
+                                    <option value="rotiseria">Rotisería / Gastronomía</option>
+                                    <option value="ecommerce">Tienda Online / E-commerce</option>
+                                    <option value="psicologos">Psicólogos/Terapeutas</option>
+                                    <option value="taller">Taller de Reparación</option>
+                                    <option value="gimnasio">Gimnasio / Fitness</option>
+                                    <option value="personalizado">Página Personalizada</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="mensaje" rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary btn-large btn-full">Enviar Consulta</button>
+                        </form>
+                    </div>
+                    <div class="contact-info scroll-reveal">
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h3>WhatsApp</h3>
+                                <a href="https://wa.me/5492235254889" target="_blank" rel="noopener" class="contact-link">+54 223 525-4889</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <a href="mailto:facundobaldezari@gmail.com" class="contact-link">facundobaldezari@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💻</div>
+                            <div>
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/Baldezari00" target="_blank" rel="noopener" class="contact-link">github.com/Baldezari00</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>Ubicación</h3>
+                                <p>Mar del Plata, Argentina</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div>
+                                <h3>Horarios</h3>
+                                <p>Lun - Vie: 9am - 20hs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Proyectos (oculta por defecto) -->
+        <section id="proyectos" class="projects-showcase" style="display: none;">
+            <div class="container">
+                <div class="projects-header">
+                    <h2 class="section-title">Mis Proyectos Realizados</h2>
+                    <p class="section-subtitle">Explorá las demos de páginas web que he desarrollado</p>
+                </div>
+                <div class="demo-projects-grid">
+                    <div class="demo-project-card">
+                        <span class="demo-project-icon">🧠</span>
+                        <h3>Psicólogos</h3>
+                        <p>Página web profesional para consultorios de psicología con todas las funcionalidades necesarias</p>
+                        <a href="/psicologos/" class="demo-btn" target="_blank">Ver Demo</a>
+                    </div>
+                    <div class="demo-project-card">
+                        <span class="demo-project-icon">🍕</span>
+                        <h3>Rotiserías</h3>
+                        <p>Sistema completo de pedidos online con menú digital y gestión de entregas</p>
+                        <a href="/rotiseria/" class="demo-btn" target="_blank">Ver Demo</a>
+                    </div>
+                    <div class="demo-project-card">
+                        <span class="demo-project-icon">💪</span>
+                        <h3>Gimnasios</h3>
+                        <p>Plataforma web con información de clases, horarios y sistema de contacto</p>
+                        <a href="/gimansio/" class="demo-btn" target="_blank">Ver Demo</a>
+                    </div>
+                    <div class="demo-project-card">
+                        <span class="demo-project-icon">🛠️</span>
+                        <h3>Reparación Técnica</h3>
+                        <p>Plataforma web con información de reparaciones, tabla de precios y panel administrador</p>
+                        <a href="/reparacion/" class="demo-btn" target="_blank">Ver Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Facundo Baldezari</h3>
+                    <p>Desarrollo web profesional para negocios en Mar del Plata y toda Argentina</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#calculadora">Precios</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="https://wa.me/5492235254889" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="mailto:facundobaldezari@gmail.com">Email</a></li>
+                        <li><a href="https://github.com/Baldezari00" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Facundo Baldezari. Todos los derechos reservados.</p>
+                <p class="footer-love">Desarrollado con ❤️ en Argentina</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="projects-grid">
-            <div class="project-card" onclick="window.location.href='/psicologo'">
-                <span class="project-icon">🧠</span>
-                <h2>Psicólogos</h2>
-                <p>Página web profesional para consultorios de psicología con todas las funcionalidades necesarias</p>
-                <a href="/psicologos/" class="project-btn">Ver Demo</a>
-            </div>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5492235254889?text=Hola!%20Me%20interesa%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+        <span class="whatsapp-tooltip">Contactame por WhatsApp</span>
+    </a>
 
-            <div class="project-card" onclick="window.location.href='/rotiseria'">
-                <span class="project-icon">🍕</span>
-                <h2>Rotiserías</h2>
-                <p>Sistema completo de pedidos online con menú digital y gestión de entregas</p>
-                <a href="/rotiseria/" class="project-btn">Ver Demo</a>
-            </div>
+    <!-- Botón Ver Proyectos -->
+    <button id="toggleProjects" class="projects-toggle-btn" aria-label="Ver proyectos realizados">
+        <span class="projects-btn-icon">🎨</span>
+        <span class="projects-btn-text">Ver Demos</span>
+    </button>
 
-            <div class="project-card" onclick="window.location.href='/gimnasio'">
-                <span class="project-icon">💪</span>
-                <h2>Gimnasios</h2>
-                <p>Plataforma web con información de clases, horarios y sistema de contacto</p>
-                <a href="/gimansio/" class="project-btn">Ver Demo</a>
-            </div>
-
-            
-            <div class="project-card" onclick="window.location.href='/gimnasio'">
-                <span class="project-icon">🛠️</span>
-                <h2>Reparacion Técnico</h2>
-                <p>Plataforma web con información reparaciones, tabla de precios, formularios y acceso administrador para modificar secciones</p>
-                <a href="/reparacion" class="project-btn">Ver Demo</a>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>¿Necesitás una página web para tu negocio?</p>
-            <div class="contact-links">
-                <a href="mailto:facundobaldezari@gmail.com" class="contact-link">📧 Email</a>
-                <a href="https://wa.me/542235254889" class="contact-link" target="_blank">📱 WhatsApp</a>
-                <a href="https://github.com/Baldezari00" class="contact-link" target="_blank">💻 GitHub</a>
-            </div>
+    <!-- Botón Cambiar Tema -->
+    <div class="theme-selector" id="themeSelector">
+        <button class="theme-btn" aria-label="Cambiar tema de colores">
+            <span class="theme-icon">🎨</span>
+        </button>
+        <div class="theme-options" id="themeOptions">
+            <button class="theme-option" data-theme="purple" aria-label="Tema morado" title="Morado/Azul">
+                <span class="theme-color" style="background: linear-gradient(135deg, #667eea, #764ba2);"></span>
+            </button>
+            <button class="theme-option" data-theme="green" aria-label="Tema verde" title="Verde/Azul">
+                <span class="theme-color" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></span>
+            </button>
+            <button class="theme-option" data-theme="orange" aria-label="Tema naranja" title="Naranja/Rosa">
+                <span class="theme-color" style="background: linear-gradient(135deg, #f46b45, #eea849);"></span>
+            </button>
+            <button class="theme-option" data-theme="blue" aria-label="Tema azul" title="Azul Oscuro">
+                <span class="theme-color" style="background: linear-gradient(135deg, #2193b0, #6dd5ed);"></span>
+            </button>
+            <button class="theme-option" data-theme="red" aria-label="Tema rojo" title="Rojo/Púrpura">
+                <span class="theme-color" style="background: linear-gradient(135deg, #c94b4b, #4b134f);"></span>
+            </button>
         </div>
     </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
