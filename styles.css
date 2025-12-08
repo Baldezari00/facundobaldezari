@@ -78,6 +78,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    border-radius: 12px;
 }
 
 a {
@@ -855,7 +856,7 @@ p {
 
 .portfolio-mockup {
     width: 90%;
-    height: 80%;
+    height: 70%;
     background: var(--white);
     position: absolute;
     top: 50%;
@@ -864,6 +865,7 @@ p {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
 }
+
 
 .portfolio-content {
     padding: 1.5rem;
