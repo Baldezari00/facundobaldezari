@@ -10,6 +10,17 @@ async function hashPassword(password) {
     const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     return hashHex;
 }
+// ========================================
+// INICIALIZACIÓN DE CONTRASEÑA
+// ========================================
+function initializePassword() {
+    // Contraseña por defecto: "admin123" (hasheada)
+    if (!localStorage.getItem('adminPasswordHash')) {
+        hashPassword('admin123').then(hash => {
+            localStorage.setItem('adminPasswordHash', hash);
+        });
+    }
+}
 
 // =========================================
 //  CARGA DE DATOS DESDE NETLIFY + TURSO
@@ -41,7 +52,7 @@ async function loadData() {
 // =========================================
 
 function renderServices() {
-  const container = document.getElementById("services-container");
+  const container = document.getElementById("servicesGrid");
   if (!container) return;
 
   container.innerHTML = servicesData

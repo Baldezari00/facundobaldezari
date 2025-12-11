@@ -239,7 +239,7 @@
                             <th>Tiempo</th>
                         </tr>
                     </thead>
-                    <tbody id="pricingTableBody">
+                    <tbody id="pricesTableBody">
                         <!-- Se renderiza dinámicamente con JS -->
                     </tbody>
                 </table>
@@ -607,66 +607,116 @@
         </div>
     </div>
 
-    <!-- PANEL ADMIN -->
-    <div id="adminPanel" class="admin-panel">
-        <div class="admin-panel-content">
-            <div class="admin-header">
-                <h2>Panel de Administración</h2>
-                <button onclick="closeAdminPanel()" class="btn-close">✕</button>
-            </div>
-            
-            <div class="admin-body">
-                <!-- GESTIÓN DE SERVICIOS -->
-                <div class="admin-section">
-                    <h3>Gestión de Servicios (¿Qué Reparamos?)</h3>
-                    
-                    <div class="admin-form">
-                        <input type="hidden" id="editServiceId">
-                        <input type="text" id="serviceName" placeholder="Nombre del Servicio (ej: CELULARES Y TABLETS)">
-                        <input type="text" id="serviceIcon" placeholder="Ícono (emoji, ej: 📱)">
-                        <textarea id="serviceItems" rows="4" placeholder="Items (uno por línea)&#10;Cambio de pantalla táctil&#10;Reemplazo de batería"></textarea>
-                        <input type="number" id="servicePrice" placeholder="Precio desde (número sin puntos)">
-                        <div class="admin-form-buttons">
-                            <button onclick="saveService()" class="btn btn-primary">Guardar Servicio</button>
-                            <button onclick="cancelEditService()" class="btn btn-secondary">Cancelar</button>
-                        </div>
-                    </div>
-                    
-                    <div class="admin-list" id="servicesList"></div>
-                </div>
-                
-                <!-- GESTIÓN DE PRECIOS -->
-                <div class="admin-section">
-                    <h3>Gestión de Tabla de Precios</h3>
-                    
-                    <div class="admin-form">
-                        <input type="hidden" id="editPriceId">
-                        <input type="text" id="priceService" placeholder="Nombre del Servicio">
-                        <input type="number" id="priceAmount" placeholder="Precio (número sin puntos)">
-                        <input type="text" id="priceTime" placeholder="Tiempo estimado (ej: 24hs)">
-                        <div class="admin-form-buttons">
-                            <button onclick="savePrice()" class="btn btn-primary">Guardar Precio</button>
-                            <button onclick="cancelEditPrice()" class="btn btn-secondary">Cancelar</button>
-                        </div>
-                    </div>
-                    
-                    <div class="admin-list" id="pricesList"></div>
-                </div>
-                <button onclick="finalizeEditing()" class="btn" style="background: #10b981; margin-top: 20px;">
-    🎯 FINALIZAR Y ENVIAR TODO
-</button>
-                <!-- CAMBIAR CONTRASEÑA -->
-                <div class="admin-section">
-                    <h3>Cambiar Contraseña</h3>
-                    <div class="admin-form">
-                        <input type="password" id="newPassword" placeholder="Nueva contraseña (mínimo 6 caracteres)">
-                        <input type="password" id="confirmPassword" placeholder="Confirmar contraseña">
-                        <button onclick="changePassword()" class="btn btn-primary">Cambiar Contraseña</button>
-                    </div>
-                </div>
-            </div>
+    <!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- MODAL LOGIN ADMIN -->
+<div id="adminLoginModal" class="admin-modal">
+    <div class="admin-modal-content">
+        <h2>Acceso Administrador</h2>
+        <input type="password" id="adminPassword" placeholder="Contraseña"
+               onkeypress="if(event.key === 'Enter') adminLogin()">
+        <div class="admin-modal-buttons">
+            <button onclick="adminLogin()" class="btn btn-primary">Ingresar</button>
+            <button onclick="closeAdminLogin()" class="btn btn-secondary">Cancelar</button>
         </div>
     </div>
+</div>
+
+<!-- PANEL ADMIN -->
+<div id="adminPanel" class="admin-panel">
+    <div class="admin-panel-content">
+        <div class="admin-header">
+            <h2>Panel de Administración</h2>
+            <button onclick="closeAdminPanel()" class="btn-close">✕</button>
+        </div>
+        
+        <div class="admin-body">
+
+            <!-- =============================== -->
+            <!--   GESTIÓN DE SERVICIOS          -->
+            <!-- =============================== -->
+            <div class="admin-section">
+                <h3>Gestión de Servicios (¿Qué Reparamos?)</h3>
+
+                <div class="admin-form">
+                    <input type="hidden" id="editServiceId">
+
+                    <!-- ID QUE USA EL SCRIPT -->
+                    <input type="text" id="name" placeholder="Nombre del Servicio (ej: Celulares)">
+                    <input type="text" id="serviceIcon" placeholder="Ícono (emoji, ej: 📱)">
+                    
+                    <textarea id="description" rows="4"
+                        placeholder="Descripción o lista de items (uno por línea)">
+                    </textarea>
+
+                    <input type="number" id="price" placeholder="Precio desde">
+
+                    <div class="admin-form-buttons">
+                        <button onclick="saveService()" class="btn btn-primary">Guardar Servicio</button>
+                        <button onclick="cancelEditService()" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </div>
+
+                <!-- LISTA QUE USA EL SCRIPT -->
+                <div class="admin-list" id="servicesList"></div>
+            </div>
+
+            <!-- =============================== -->
+            <!--        GESTIÓN DE PRECIOS      -->
+            <!-- =============================== -->
+            <div class="admin-section">
+                <h3>Gestión de Tabla de Precios</h3>
+
+                <form id="priceForm" onsubmit="handleSubmit(event)" class="admin-form">
+
+                    <input type="hidden" id="priceId">
+
+                    <!-- IDS EXACTAS QUE USA EL SCRIPT -->
+                    <input type="text" id="priceService" placeholder="Nombre del Servicio">
+                    <input type="number" id="priceAmount" placeholder="Precio">
+                    <input type="text" id="priceTime" placeholder="Tiempo (ej: 24hs)">
+
+                    <div class="admin-form-buttons">
+                        <button id="submitBtn" class="btn btn-primary">Agregar precio</button>
+                        <button type="button" onclick="cancelEditPrice()" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+
+                <!-- TABLA QUE ESPERA EL SCRIPT -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Servicio</th>
+                            <th>Precio</th>
+                            <th>Tiempo</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pricesTableBody"></tbody>
+                </table>
+            </div>
+
+            <button onclick="finalizeEditing()" class="btn" style="background: #10b981; margin-top: 20px;">
+                🎯 FINALIZAR Y ENVIAR TODO
+            </button>
+
+            <!-- =============================== -->
+            <!--     CAMBIO DE CONTRASEÑA        -->
+            <!-- =============================== -->
+            <div class="admin-section">
+                <h3>Cambiar Contraseña</h3>
+                <div class="admin-form">
+                    <input type="password" id="newPassword" placeholder="Nueva contraseña">
+                    <input type="password" id="confirmPassword" placeholder="Confirmar contraseña">
+                    <button onclick="changePassword()" class="btn btn-primary">Cambiar Contraseña</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
