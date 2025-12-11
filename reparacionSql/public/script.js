@@ -29,15 +29,15 @@ function initializePassword() {
 let servicesData = [];
 let pricesData = [];
 // URL de tu función de Netlify
-const API_URL = "/.netlify/functions/prices";
+const API_URL = "./reparacionSql/netlify/functions/prices";
 
 // Cargar datos desde tus funciones serverless
 async function loadData() {
   try {
-    const servicesRes = await fetch("/.netlify/functions/services");
+    const servicesRes = await fetch("./reparacionSql/netlify/functions/services");
     servicesData = await servicesRes.json();
 
-    const pricesRes = await fetch("/.netlify/functions/prices");
+    const pricesRes = await fetch("./reparacionSql/netlify/functions/prices");
     pricesData = await pricesRes.json();
 
     renderServices();
