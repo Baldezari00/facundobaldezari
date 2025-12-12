@@ -1,148 +1,3 @@
-// ===================================
-// Service Data
-// ===================================
-const servicesData = [
-    {
-        id: 1,
-        type: 'Landing Page Simple',
-        price: '$30.000 - $50.000',
-        priceMin: 30000,
-        priceMax: 50000,
-        description: 'Página de 1 sección perfecta para captar leads',
-        includes: [
-            '1 página',
-            'Diseño responsive',
-            'Formulario de contacto',
-            'Hosting primer año incluido'
-        ],
-        time: '3-5 días',
-        ideal: 'Freelancers, profesionales independientes',
-        badge: 'Popular'
-    },
-    {
-        id: 2,
-        type: 'Sitio Corporativo',
-        price: '$60.000 - $100.000',
-        priceMin: 60000,
-        priceMax: 100000,
-        description: 'Sitio profesional para empresas y estudios',
-        includes: [
-            '5-7 secciones',
-            'Diseño a medida',
-            'SEO básico',
-            'Formularios de contacto',
-            'Hosting primer año incluido'
-        ],
-        time: '7-10 días',
-        ideal: 'Contadores, abogados, consultorías',
-        badge: 'Profesional'
-    },
-    {
-        id: 3,
-        type: 'Rotisería / Gastronomía',
-        price: '$50.000 - $80.000',
-        priceMin: 50000,
-        priceMax: 80000,
-        description: 'Página con menú dinámico y sistema de pedidos',
-        includes: [
-            'Menú editable',
-            'Panel admin',
-            'WhatsApp integrado',
-            'Categorías de productos',
-            'Hosting primer año incluido'
-        ],
-        time: '7-10 días',
-        ideal: 'Rotiserías, restaurantes, delivery'
-    },
-    {
-        id: 4,
-        type: 'Tienda Online / E-commerce',
-        price: '$120.000 - $200.000',
-        priceMin: 120000,
-        priceMax: 200000,
-        description: 'Tienda completa con carrito y pagos online',
-        includes: [
-            'Catálogo de productos',
-            'Carrito de compras',
-            'Integración MercadoPago',
-            'Panel admin completo',
-            'Gestión de pedidos',
-            'Hosting primer año incluido'
-        ],
-        time: '15-20 días',
-        ideal: 'Tiendas, comercios, emprendimientos',
-        badge: 'Avanzado'
-    },
-    {
-        id: 5,
-        type: 'Página para Psicólogos/Terapeutas',
-        price: '$50.000 - $75.000',
-        priceMin: 50000,
-        priceMax: 75000,
-        description: 'Sitio profesional con sistema de turnos',
-        includes: [
-            'Perfil profesional',
-            'Especialidades',
-            'Formulario de consultas',
-            'Calendario de disponibilidad',
-            'Hosting primer año incluido'
-        ],
-        time: '7-10 días',
-        ideal: 'Psicólogos, nutricionistas, médicos'
-    },
-    {
-        id: 6,
-        type: 'Taller de Reparación',
-        price: '$45.000 - $70.000',
-        priceMin: 45000,
-        priceMax: 70000,
-        description: 'Web con presupuestador y lista de servicios',
-        includes: [
-            'Lista de servicios',
-            'Precios',
-            'Formulario de presupuesto',
-            'Zona de cobertura',
-            'Hosting primer año incluido'
-        ],
-        time: '5-7 días',
-        ideal: 'Service técnico, reparaciones'
-    },
-    {
-        id: 7,
-        type: 'Gimnasio / Fitness',
-        price: '$80.000 - $120.000',
-        priceMin: 80000,
-        priceMax: 120000,
-        description: 'Sitio dinámico con grilla de clases y planes',
-        includes: [
-            'Horarios de clases',
-            'Planes y precios',
-            'Galería de fotos',
-            'Formulario de inscripción',
-            'Integración redes sociales',
-            'Hosting primer año incluido'
-        ],
-        time: '10-14 días',
-        ideal: 'Gimnasios, boxes, estudios deportivos'
-    },
-    {
-        id: 8,
-        type: 'Página Personalizada',
-        price: 'A consultar',
-        priceMin: 0,
-        priceMax: 0,
-        description: 'Proyecto a medida según tus necesidades',
-        includes: [
-            'Análisis de requerimientos',
-            'Diseño 100% personalizado',
-            'Funcionalidades específicas',
-            'Todo lo que necesites'
-        ],
-        time: 'A definir',
-        ideal: 'Cualquier proyecto especial',
-        badge: 'Personalizado'
-    }
-];
 
 // ===================================
 // Global Variables
@@ -176,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollReveal();
     initFAQ();
-    initExtras();
     initHeaderScroll();
     initProjectsToggle();
     initThemeSelector();
@@ -187,40 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Render Services
 // ===================================
 function renderServices() {
-    servicesGrid.innerHTML = servicesData.map(service => `
-        <div class="service-card" data-service-id="${service.id}">
-            <div class="service-header">
-                <h3 class="service-type">${service.type}</h3>
-                ${service.badge ? `<span class="service-badge">${service.badge}</span>` : ''}
-            </div>
-            <div class="service-price">${service.price}</div>
-            <p class="service-description">${service.description}</p>
-            <span>Haz clic para ver más</span>
-
-            
-            <div class="service-details">
-                <div class="service-includes">
-                    <h4>Qué incluye:</h4>
-                    <ul>
-                        ${service.includes.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                </div>
-                <div class="service-meta">
-                    <div class="service-time">
-                        <strong>Tiempo estimado:</strong>
-                        <span>${service.time}</span>
-                    </div>
-                    <div class="service-ideal">
-                        <strong>Ideal para:</strong>
-                        <span>${service.ideal}</span>
-                    </div>
-                </div>
-                
-                <button class="service-btn" onclick="selectService(${service.id})">Solicitar este servicio</button>
-            </div>
-        </div>
-    `).join('');
-    
     // Add click listeners to service cards
     document.querySelectorAll('.service-card').forEach(card => {
         card.addEventListener('click', function(e) {
@@ -247,78 +67,25 @@ function toggleServiceCard(serviceId) {
     // Open clicked card if it wasn't active
     if (!wasActive) {
         card.classList.add('active');
-        selectedService = servicesData.find(s => s.id === serviceId);
-        extrasSection.style.display = 'block';
-        calculateTotal();
     } else {
         selectedService = null;
-        extrasSection.style.display = 'none';
-        priceTotal.style.display = 'none';
     }
 }
 
 // ===================================
 // Select Service
 // ===================================
-function selectService(serviceId) {
-    const service = servicesData.find(s => s.id === serviceId);
-    if (!service) return;
+function selectService(serviceName,servicePrice) {
+
     
-    const message = service.priceMin === 0 
-        ? `Hola! Me interesa el servicio de ${service.type}. ¿Podemos coordinar una reunión para discutir los detalles?`
-        : `Hola! Me interesa el servicio de ${service.type}. El presupuesto estimado es ${service.price}. ¿Podemos coordinar?`;
+    const message = servicePrice === 0 
+        ? `Hola! Me interesa el servicio de ${serviceName}. ¿Podemos coordinar una reunión para discutir los detalles?`
+        : `Hola! Me interesa el servicio de ${serviceName}. El presupuesto estimado es ${servicePrice}. ¿Podemos coordinar?`;
     
     const whatsappUrl = `https://wa.me/5492235254889?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
-// ===================================
-// Initialize Extras
-// ===================================
-function initExtras() {
-    const extraCheckboxes = document.querySelectorAll('.extra-checkbox input');
-    extraCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const price = parseInt(this.dataset.price);
-            const name = this.dataset.name;
-            
-            if (this.checked) {
-                selectedExtras.push({ name, price });
-            } else {
-                selectedExtras = selectedExtras.filter(e => e.name !== name);
-            }
-            
-            calculateTotal();
-        });
-    });
-}
-
-// ===================================
-// Calculate Total
-// ===================================
-function calculateTotal() {
-    if (!selectedService) return;
-    
-    const basePrice = selectedService.priceMax || selectedService.priceMin;
-    const extrasPrice = selectedExtras.reduce((sum, extra) => sum + extra.price, 0);
-    const total = basePrice + extrasPrice;
-    
-    if (basePrice > 0) {
-        totalPrice.textContent = `$${total.toLocaleString('es-AR')}`;
-        priceTotal.style.display = 'block';
-        
-        // Update WhatsApp button
-        const extrasText = selectedExtras.length > 0 
-            ? ` con ${selectedExtras.map(e => e.name).join(', ')}`
-            : '';
-        
-        requestQuoteBtn.onclick = function() {
-            const message = `Hola! Me interesa el servicio de ${selectedService.type}${extrasText}. El presupuesto calculado es $${total.toLocaleString('es-AR')}. ¿Podemos coordinar?`;
-            const whatsappUrl = `https://wa.me/5492235254889?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        };
-    }
-}
 
 // ===================================
 // Navigation
@@ -452,14 +219,35 @@ function initProjectsToggle() {
 // Theme Selector
 // ===================================
 function initThemeSelector() {
+    const themeBtn = document.querySelector('.theme-btn');
+    const themeOptionsEl = document.getElementById('themeOptions');
+    
+    // Toggle menu con click
+    themeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        themeOptionsEl.classList.toggle('active');
+    });
+    
+    // Cerrar al hacer click fuera
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.theme-selector')) {
+            themeOptionsEl.classList.remove('active');
+        }
+    });
+    
+    // Seleccionar tema
     themeOptions.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function(e) {
+            e.stopPropagation();
             const theme = this.dataset.theme;
             setTheme(theme);
             
             // Update active state
             themeOptions.forEach(opt => opt.classList.remove('active'));
             this.classList.add('active');
+            
+            // Cerrar el menú después de seleccionar
+            themeOptionsEl.classList.remove('active');
         });
     });
 }

@@ -1273,8 +1273,8 @@ span{
    =================================== */
 .whatsapp-float {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 1rem;
+    right: 1rem;
     width: 60px;
     height: 60px;
     background: #25d366;
@@ -1292,9 +1292,6 @@ span{
     transform: scale(1.1);
 }
 
-.whatsapp-icon {
-    font-size: 2rem;
-}
 
 .whatsapp-tooltip {
     position: absolute;
@@ -1307,7 +1304,7 @@ span{
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    font-size: 0.875rem;
+    font-size: 0.775rem;
 }
 
 .whatsapp-float:hover .whatsapp-tooltip {
@@ -1363,10 +1360,10 @@ span{
    =================================== */
 .theme-selector {
     position: fixed;
-    top: 50%;
+    top: 20%;
     right: 1rem;
     transform: translateY(-50%);
-    z-index: 1001;
+    z-index: 999;
 }
 
 .theme-btn {
@@ -1393,7 +1390,6 @@ span{
 .theme-icon {
     font-size: 1.5rem;
 }
-
 .theme-options {
     position: absolute;
     right: 65px;
@@ -1410,7 +1406,7 @@ span{
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.theme-selector:hover .theme-options {
+.theme-options.active {
     opacity: 1;
     pointer-events: all;
     transform: translateY(-50%) translateX(-5px);
