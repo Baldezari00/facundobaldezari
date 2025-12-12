@@ -26,12 +26,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
     
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -47,15 +48,75 @@
         "addressRegion": "Buenos Aires",
         "addressCountry": "AR"
       },
-      "priceRange": "$15000-$60000",
+      "priceRange": "$15000-$60000"
     }
     </script>
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="char">Facundo</span>
+                <span class="char">Baldezari</span>
+                <p class="section-subtitle-loader" data-animate="fade-up">Desarrollo Web</p>
+            </div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loaderBar"></div>
+            </div>
+            <span class="loader-percentage" id="loaderPercentage">0%</span>
+        </div>
+    </div>
+
+       <!-- Theme Switcher Button -->
+    <div class="theme-switcher">
+        <button class="theme-btn" id="themeBtn" title="Cambiar tema">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        </button>
+        <div class="theme-dropdown" id="themeDropdown">
+            <div class="theme-option" data-theme="light">
+                <span class="theme-preview theme-light"></span>
+                <span>Modo Claro</span>
+            </div>
+            <div class="theme-option" data-theme="dark">
+                <span class="theme-preview theme-dark"></span>
+                <span>Modo Oscuro</span>
+            </div>
+            <div class="theme-option" data-theme="blue">
+                <span class="theme-preview theme-blue"></span>
+                <span>Azul</span>
+            </div>
+            <div class="theme-option" data-theme="purple">
+                <span class="theme-preview theme-purple"></span>
+                <span>Morado</span>
+            </div>
+            <div class="theme-option" data-theme="green">
+                <span class="theme-preview theme-green"></span>
+                <span>Verde</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Header / Navigation -->
     <header id="header">
         <nav class="nav-container">
-            <div class="logo">FB</div>
+            <div class="logo" data-animate="fade-in">
+                <span class="logo-letter">F</span>
+                <span class="logo-letter">B</span>
+
+            </div>
+                            <span class="section-subtitle-nav" data-animate="fade-up">Desarrollo Web</span>
+
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
                 <li><a href="#servicios" class="nav-link">Servicios</a></li>
@@ -74,308 +135,443 @@
     <main>
         <!-- Hero Section -->
         <section id="inicio" class="hero">
+            <!-- Animated Background -->
+            <div class="hero-bg">
+                <div class="gradient-mesh"></div>
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+            
             <div class="hero-container">
-                <div class="hero-content fade-in">
-                    <h1 class="hero-title">Desarrollo Web Profesional para Tu Negocio</h1>
-                    <p class="hero-subtitle">Páginas web modernas, responsive y optimizadas para convertir visitantes en clientes</p>
-                    <div class="hero-badges">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-animate="text-reveal">
+                        <span class="line">
+                            <span class="word">
+                                <span class="char">D</span>
+                                <span class="char">e</span>
+                                <span class="char">s</span>
+                                <span class="char">a</span>
+                                <span class="char">r</span>
+                                <span class="char">r</span>
+                                <span class="char">o</span>
+                                <span class="char">l</span>
+                                <span class="char">l</span>
+                                <span class="char">o</span>
+                            </span>
+                            <span class="word">
+                                <span class="char">W</span>
+                                <span class="char">e</span>
+                                <span class="char">b</span>
+                            </span>
+                        </span>
+                        <span class="line">
+                            <span class="word gradient-text">
+                                <span class="char">P</span>
+                                <span class="char">r</span>
+                                <span class="char">o</span>
+                                <span class="char">f</span>
+                                <span class="char">e</span>
+                                <span class="char">s</span>
+                                <span class="char">i</span>
+                                <span class="char">o</span>
+                                <span class="char">n</span>
+                                <span class="char">a</span>
+                                <span class="char">l</span>
+                            </span>
+                        </span>
+                    </h1>
+                    <p class="hero-subtitle" data-animate="fade-up" data-delay="800">
+                        Transformo ideas en experiencias digitales impactantes. Páginas web modernas, responsive y optimizadas para convertir visitantes en clientes reales.
+                    </p>
+                    <div class="hero-badges" data-animate="fade-up" data-delay="1000">
                         <div class="badge">
                             <span class="badge-icon">⚡</span>
-                            <span>Entrega en 5-7 días</span>
+                            <span>Entrega 5-7 días</span>
                         </div>
                         <div class="badge">
                             <span class="badge-icon">💰</span>
-                            <span>Desde $15.000/mes</span>
+                            <span>Desde $15.000</span>
                         </div>
                         <div class="badge">
                             <span class="badge-icon">📱</span>
-                            <span>100% Responsive/Adaptable</span>
+                            <span>100% Responsive</span>
                         </div>
                     </div>
-                    <div class="hero-ctas">
-                        <a href="#calculadora" class="btn-primary btn-large">Ver Precios</a>
-                        <a href="https://wa.me/5492235254889?text=Hola!%20Me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" class="btn-outline btn-large" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+                    <div class="hero-ctas" data-animate="fade-up" data-delay="1200">
+                        <a href="#calculadora" class="btn-primary btn-large magnetic-btn">
+                            <span>Ver Precios</span>
+                        </a>
+                        <a href="https://wa.me/5492235254889?text=Hola!%20Me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" class="btn-outline btn-large magnetic-btn" target="_blank" rel="noopener">
+                            <span>WhatsApp</span>
+                        </a>
                     </div>
                 </div>
                 
+                <div class="scroll-indicator" data-animate="fade-in" data-delay="1500">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span>Scroll</span>
+                </div>
             </div>
         </section>
 
-<!-- Calculadora de Servicios -->
-<section id="calculadora" class="calculator-section">
-    <div class="container">
-        <h2 class="section-title">¿Cuánto Cuesta Tu Página Web?</h2>
-        <p class="section-subtitle">Calculá tu presupuesto en segundos según el tipo de proyecto</p>
-        
-        <div class="services-grid" id="servicesGrid">
-            <!-- Landing Page Simple -->
-            <div class="service-card" data-service-id="1">
-                <div class="service-header">
-                    <h3 class="service-type">Landing Page Simple</h3>
-                    <span class="service-badge">Popular</span>
-                </div>
-                <div class="service-price">$15.000 - $20.000/mes</div>
-                <p class="service-description">Página de 1 sección perfecta para captar leads</p>
-                <span>Haz clic para ver más</span>
+        <!-- Calculadora de Servicios -->
+        <section id="calculadora" class="calculator-section">
+            <div class="container">
+                <h2 class="section-title" data-animate="text-reveal">
+                    <span class="word">
+                        <span class="char">¿</span>
+                        <span class="char">C</span>
+                        <span class="char">u</span>
+                        <span class="char">á</span>
+                        <span class="char">n</span>
+                        <span class="char">t</span>
+                        <span class="char">o</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">C</span>
+                        <span class="char">u</span>
+                        <span class="char">e</span>
+                        <span class="char">s</span>
+                        <span class="char">t</span>
+                        <span class="char">a</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">T</span>
+                        <span class="char">u</span>
+                    </span>
+                    <span class="word gradient-text">
+                        <span class="char">P</span>
+                        <span class="char">á</span>
+                        <span class="char">g</span>
+                        <span class="char">i</span>
+                        <span class="char">n</span>
+                        <span class="char">a</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">W</span>
+                        <span class="char">e</span>
+                        <span class="char">b</span>
+                        <span class="char">?</span>
+                    </span>
+                </h2>
+                <p class="section-subtitle" data-animate="fade-up">Calculá tu presupuesto en segundos según el tipo de proyecto</p>
+                
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Landing Page Simple -->
+                    <div class="service-card" data-service-id="1" data-animate="fade-up" data-delay="100">
+                        <div class="service-card-glow"></div>
+                        <div class="service-header">
+                            <h3 class="service-type">Landing Page Simple</h3>
+                            <span class="service-badge">Popular</span>
+                        </div>
+                        <div class="service-price">$15.000 - $20.000<span>/mes</span></div>
+                        <p class="service-description">Página de 1 sección perfecta para captar leads</p>
+                        <span class="service-expand-hint">Haz clic para ver más</span>
 
-                <div class="service-details">
-                    <div class="service-includes">
-                        <h4>Qué incluye:</h4>
-                        <ul>
-                            <li>Diseño responsive</li>
-                            <li>Formulario de contacto</li>
-                            <li>SEO para Google</li>
-                            <li>Integración con WhatsApp y redes sociales</li>
-                        </ul>
-                    </div>
-                    <div class="service-meta">
-                        <div class="service-time">
-                            <strong>Tiempo estimado:</strong>
-                            <span>3-5 días</span>
+                        <div class="service-details">
+                            <div class="service-includes">
+                                <h4>Qué incluye:</h4>
+                                <ul>
+                                    <li>Diseño responsive</li>
+                                    <li>Formulario de contacto</li>
+                                    <li>SEO para Google</li>
+                                    <li>Integración con WhatsApp y redes sociales</li>
+                                </ul>
+                            </div>
+                            <div class="service-meta">
+                                <div class="service-time">
+                                    <strong>Tiempo estimado:</strong>
+                                    <span>3-5 días</span>
+                                </div>
+                                <div class="service-ideal">
+                                    <strong>Ideal para:</strong>
+                                    <span>Freelancers, Negocios y profesionales independientes</span>
+                                </div>
+                            </div>
+                            
+                            <button class="service-btn magnetic-btn" onclick="selectService('Landing Page Simple','$15.000')">
+                                <span>Solicitar este servicio</span>
+                            </button>
                         </div>
-                        <div class="service-ideal">
-                            <strong>Ideal para:</strong>
-                            <span>Freelancers, Negocios y profesionales independientes</span>
+                    </div>
+
+                    <!-- Rotisería / Gastronomía -->
+                    <div class="service-card" data-service-id="2" data-animate="fade-up" data-delay="200">
+                        <div class="service-card-glow"></div>
+                        <div class="service-header">
+                            <h3 class="service-type">Rotisería / Gastronomía</h3>
+                        </div>
+                        <div class="service-price">$25.000 - $40.000<span>/mes</span></div>
+                        <p class="service-description">Página con menú dinámico y panel administrativo</p>
+                        <span class="service-expand-hint">Haz clic para ver más</span>
+
+                        <div class="service-details">
+                            <div class="service-includes">
+                                <h4>Qué incluye:</h4>
+                                <ul>
+                                    <li>Menú editable</li>
+                                    <li>Panel admin para modificar el menú fácilmente</li>
+                                    <li>Base de datos para persistir el menú</li>
+                                    <li>Integración con WhatsApp y redes sociales</li>
+                                    <li>Categorías de productos</li>
+                                    <li>SEO para Google</li>
+                                </ul>
+                            </div>
+                            <div class="service-meta">
+                                <div class="service-time">
+                                    <strong>Tiempo estimado:</strong>
+                                    <span>5-10 días</span>
+                                </div>
+                                <div class="service-ideal">
+                                    <strong>Ideal para:</strong>
+                                    <span>Rotiserías, restaurantes, cafe, delivery</span>
+                                </div>
+                            </div>
+                            
+                            <button class="service-btn magnetic-btn" onclick="selectService('Rotisería/Gastronomía','$25.000')">
+                                <span>Solicitar este servicio</span>
+                            </button>
                         </div>
                     </div>
-                    
-                    <button class="service-btn" onclick="selectService('Landing Page Simple','$15.000')">Solicitar este servicio</button>
+
+                    <!-- Psicólogos, Terapeutas -->
+                    <div class="service-card" data-service-id="3" data-animate="fade-up" data-delay="300">
+                        <div class="service-card-glow"></div>
+                        <div class="service-header">
+                            <h3 class="service-type">Página para Psicólogos, Terapeutas y/o Nutricionistas</h3>
+                        </div>
+                        <div class="service-price">$15.000 - $20.000<span>/mes</span></div>
+                        <p class="service-description">Sitio profesional para promocionar tus servicios y tener una presencia online profesional</p>
+                        <span class="service-expand-hint">Haz clic para ver más</span>
+
+                        <div class="service-details">
+                            <div class="service-includes">
+                                <h4>Qué incluye:</h4>
+                                <ul>
+                                    <li>Perfil profesional</li>
+                                    <li>Especialidades</li>
+                                    <li>Formulario de consultas</li>
+                                    <li>Integración con WhatsApp y redes sociales</li>
+                                    <li>SEO para Google</li>
+                                    <li>Sección con fotos para mostrar tu espacio de trabajo</li>
+                                </ul>
+                            </div>
+                            <div class="service-meta">
+                                <div class="service-time">
+                                    <strong>Tiempo estimado:</strong>
+                                    <span>3-5 días</span>
+                                </div>
+                                <div class="service-ideal">
+                                    <strong>Ideal para:</strong>
+                                    <span>Psicólogos, Terapeutas, Nutricionistas, Médicos y Profesionales independientes</span>
+                                </div>
+                            </div>
+                            
+                            <button class="service-btn magnetic-btn" onclick="selectService('Psicologo/Terapeuta/Nutricionista','$15.000')">
+                                <span>Solicitar este servicio</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Servicios Técnicos -->
+                    <div class="service-card" data-service-id="4" data-animate="fade-up" data-delay="400">
+                        <div class="service-card-glow"></div>
+                        <div class="service-header">
+                            <h3 class="service-type">Servicios Técnicos</h3>
+                        </div>
+                        <div class="service-price">$25.000 - $40.000<span>/mes</span></div>
+                        <p class="service-description">Web llamativa con tabla de precios y lista de servicios (modificables desde el panel admin)</p>
+                        <span class="service-expand-hint">Haz clic para ver más</span>
+
+                        <div class="service-details">
+                            <div class="service-includes">
+                                <h4>Qué incluye:</h4>
+                                <ul>
+                                    <li>Lista de servicios</li>
+                                    <li>Tabla de precios</li>
+                                    <li>Panel administrativo para modificar servicios y precios fácilmente</li>
+                                    <li>Base de datos para persistir la tabla de precios y servicios</li>
+                                    <li>2 Formularios de presupuesto, uno para presupuesto rápido y otro detallado</li>
+                                    <li>Zona de cobertura</li>
+                                    <li>SEO para Google</li>
+                                    <li>Integración con WhatsApp y redes sociales</li>
+                                </ul>
+                            </div>
+                            <div class="service-meta">
+                                <div class="service-time">
+                                    <strong>Tiempo estimado:</strong>
+                                    <span>3-7 días</span>
+                                </div>
+                                <div class="service-ideal">
+                                    <strong>Ideal para:</strong>
+                                    <span>Service técnico, reparaciones</span>
+                                </div>
+                            </div>
+                            
+                            <button class="service-btn magnetic-btn" onclick="selectService('Servicio Técnico','$25.000')">
+                                <span>Solicitar este servicio</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Gimnasio / Fitness -->
+                    <div class="service-card" data-service-id="5" data-animate="fade-up" data-delay="500">
+                        <div class="service-card-glow"></div>
+                        <div class="service-header">
+                            <h3 class="service-type">Gimnasio / Fitness</h3>
+                        </div>
+                        <div class="service-price">$15.000 - $30.000<span>/mes</span></div>
+                        <p class="service-description">Sitio dinámico con grilla de clases y planes</p>
+                        <span class="service-expand-hint">Haz clic para ver más</span>
+
+                        <div class="service-details">
+                            <div class="service-includes">
+                                <h4>Qué incluye:</h4>
+                                <ul>
+                                    <li>Horarios de clases</li>
+                                    <li>Planes y precios</li>
+                                    <li>Galería de fotos</li>
+                                    <li>Formulario de inscripción</li>
+                                    <li>Integración con WhatsApp y redes sociales</li>
+                                    <li>SEO para Google</li>
+                                </ul>
+                            </div>
+                            <div class="service-meta">
+                                <div class="service-time">
+                                    <strong>Tiempo estimado:</strong>
+                                    <span>3-7 días</span>
+                                </div>
+                                <div class="service-ideal">
+                                    <strong>Ideal para:</strong>
+                                    <span>Gimnasios, boxes, estudios deportivos</span>
+                                </div>
+                            </div>
+                            
+                            <button class="service-btn magnetic-btn" onclick="selectService('Gimnasio/Fitness','$15.000')">
+                                <span>Solicitar este servicio</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Página Personalizada -->
+                    <div class="service-card" data-service-id="6" data-animate="fade-up" data-delay="600">
+                        <div class="service-card-glow"></div>
+                        <div class="service-header">
+                            <h3 class="service-type">Página Personalizada</h3>
+                            <span class="service-badge">Personalizado</span>
+                        </div>
+                        <div class="service-price">A consultar</div>
+                        <p class="service-description">Proyecto a medida según tus necesidades</p>
+                        <span class="service-expand-hint">Haz clic para ver más</span>
+
+                        <div class="service-details">
+                            <div class="service-includes">
+                                <h4>Qué incluye:</h4>
+                                <ul>
+                                    <li>Análisis de requerimientos</li>
+                                    <li>Diseño 100% personalizado</li>
+                                    <li>Funcionalidades específicas</li>
+                                    <li>Todo lo que necesites</li>
+                                </ul>
+                            </div>
+                            <div class="service-meta">
+                                <div class="service-time">
+                                    <strong>Tiempo estimado:</strong>
+                                    <span>A definir</span>
+                                </div>
+                                <div class="service-ideal">
+                                    <strong>Ideal para:</strong>
+                                    <span>Cualquier proyecto especial</span>
+                                </div>
+                            </div>
+                            
+                            <button class="service-btn magnetic-btn" onclick="selectService('Página personalizada',0)">
+                                <span>Solicitar este servicio</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Rotisería / Gastronomía -->
-            <div class="service-card" data-service-id="2">
-                <div class="service-header">
-                    <h3 class="service-type">Rotisería / Gastronomía</h3>
-                </div>
-                <div class="service-price">$25.000 - $40.000/mes</div>
-                <p class="service-description">Página con menú dinámico y panel administrativo</p>
-                <span>Haz clic para ver más</span>
-
-                <div class="service-details">
-                    <div class="service-includes">
-                        <h4>Qué incluye:</h4>
-                        <ul>
-                            <li>Menú editable</li>
-                            <li>Panel admin para modificar el menú fácilmente</li>
-                            <li>Base de datos para persistir el menú</li>
-                            <li>Integración con WhatsApp y redes sociales</li>
-                            <li>Categorías de productos</li>
-                            <li>SEO para Google</li>
-                        </ul>
-                    </div>
-                    <div class="service-meta">
-                        <div class="service-time">
-                            <strong>Tiempo estimado:</strong>
-                            <span>5-10 días</span>
-                        </div>
-                        <div class="service-ideal">
-                            <strong>Ideal para:</strong>
-                            <span>Rotiserías, restaurantes, cafe, delivery</span>
-                        </div>
-                    </div>
-                    
-                    <button class="service-btn" onclick="selectService('Rotisería/Gastronomía','$25.000')">Solicitar este servicio</button>
-                </div>
-            </div>
-
-            <!-- Psicólogos, Terapeutas -->
-            <div class="service-card" data-service-id="3">
-                <div class="service-header">
-                    <h3 class="service-type">Página para Psicólogos, Terapeutas y/o Nutricionistas</h3>
-                </div>
-                <div class="service-price">$15.000 - $20.000/mes</div>
-                <p class="service-description">Sitio profesional para promocionar tus servicios y tener una presencia online profesional</p>
-                <span>Haz clic para ver más</span>
-
-                <div class="service-details">
-                    <div class="service-includes">
-                        <h4>Qué incluye:</h4>
-                        <ul>
-                            <li>Perfil profesional</li>
-                            <li>Especialidades</li>
-                            <li>Formulario de consultas</li>
-                            <li>Integración con WhatsApp y redes sociales</li>
-                            <li>SEO para Google</li>
-                            <li>Sección con fotos para mostrar tu espacio de trabajo</li>
-                        </ul>
-                    </div>
-                    <div class="service-meta">
-                        <div class="service-time">
-                            <strong>Tiempo estimado:</strong>
-                            <span>3-5 días</span>
-                        </div>
-                        <div class="service-ideal">
-                            <strong>Ideal para:</strong>
-                            <span>Psicólogos, Terapeutas, Nutricionistas, Médicos y Profesionales independientes</span>
-                        </div>
-                    </div>
-                    
-                    <button class="service-btn" onclick="selectService('Psicologo/Terapeuta/Nutricionista','$15.000')">Solicitar este servicio</button>
-                </div>
-            </div>
-
-            <!-- Servicios Técnicos -->
-            <div class="service-card" data-service-id="4">
-                <div class="service-header">
-                    <h3 class="service-type">Servicios Técnicos</h3>
-                </div>
-                <div class="service-price">$25.000 - $40.000/mes</div>
-                <p class="service-description">Web llamativa con tabla de precios y lista de servicios (modificables desde el panel admin)</p>
-                <span>Haz clic para ver más</span>
-
-                <div class="service-details">
-                    <div class="service-includes">
-                        <h4>Qué incluye:</h4>
-                        <ul>
-                            <li>Lista de servicios</li>
-                            <li>Tabla de precios</li>
-                            <li>Panel administrativo para modificar servicios y precios fácilmente</li>
-                            <li>Base de datos para persistir la tabla de precios y servicios</li>
-                            <li>2 Formularios de presupuesto, uno para presupuesto rápido y otro detallado</li>
-                            <li>Zona de cobertura</li>
-                            <li>SEO para Google</li>
-                            <li>Integración con WhatsApp y redes sociales</li>
-                        </ul>
-                    </div>
-                    <div class="service-meta">
-                        <div class="service-time">
-                            <strong>Tiempo estimado:</strong>
-                            <span>3-7 días</span>
-                        </div>
-                        <div class="service-ideal">
-                            <strong>Ideal para:</strong>
-                            <span>Service técnico, reparaciones</span>
-                        </div>
-                    </div>
-                    
-                    <button class="service-btn" onclick="selectService('Servicio Técnico','$25.000')">Solicitar este servicio</button>
-                </div>
-            </div>
-
-            <!-- Gimnasio / Fitness -->
-            <div class="service-card" data-service-id="5">
-                <div class="service-header">
-                    <h3 class="service-type">Gimnasio / Fitness</h3>
-                </div>
-                <div class="service-price">$15.000 - $30.000/mes</div>
-                <p class="service-description">Sitio dinámico con grilla de clases y planes</p>
-                <span>Haz clic para ver más</span>
-
-                <div class="service-details">
-                    <div class="service-includes">
-                        <h4>Qué incluye:</h4>
-                        <ul>
-                            <li>Horarios de clases</li>
-                            <li>Planes y precios</li>
-                            <li>Galería de fotos</li>
-                            <li>Formulario de inscripción</li>
-                            <li>Integración con WhatsApp y redes sociales</li>
-                            <li>SEO para Google</li>
-                        </ul>
-                    </div>
-                    <div class="service-meta">
-                        <div class="service-time">
-                            <strong>Tiempo estimado:</strong>
-                            <span>3-7 días</span>
-                        </div>
-                        <div class="service-ideal">
-                            <strong>Ideal para:</strong>
-                            <span>Gimnasios, boxes, estudios deportivos</span>
-                        </div>
-                    </div>
-                    
-                    <button class="service-btn" onclick="selectService('Gimnasio/Fitness','$15.000')">Solicitar este servicio</button>
-                </div>
-            </div>
-
-            <!-- Página Personalizada -->
-            <div class="service-card" data-service-id="6">
-                <div class="service-header">
-                    <h3 class="service-type">Página Personalizada</h3>
-                    <span class="service-badge">Personalizado</span>
-                </div>
-                <div class="service-price">A consultar</div>
-                <p class="service-description">Proyecto a medida según tus necesidades</p>
-                <span>Haz clic para ver más</span>
-
-                <div class="service-details">
-                    <div class="service-includes">
-                        <h4>Qué incluye:</h4>
-                        <ul>
-                            <li>Análisis de requerimientos</li>
-                            <li>Diseño 100% personalizado</li>
-                            <li>Funcionalidades específicas</li>
-                            <li>Todo lo que necesites</li>
-                        </ul>
-                    </div>
-                    <div class="service-meta">
-                        <div class="service-time">
-                            <strong>Tiempo estimado:</strong>
-                            <span>A definir</span>
-                        </div>
-                        <div class="service-ideal">
-                            <strong>Ideal para:</strong>
-                            <span>Cualquier proyecto especial</span>
-                        </div>
-                    </div>
-                    
-                    <button class="service-btn" onclick="selectService('Página personalizada',0)">Solicitar este servicio</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="price-total" id="priceTotal" style="display: none;">
-            <div class="total-container">
-                <span class="total-label">Presupuesto Total:</span>
-                <span class="total-price" id="totalPrice">$0 / mes</span>
-            </div>
-            <button class="btn-primary btn-large" id="requestQuoteBtn">Solicitar Presupuesto por WhatsApp</button>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- Por Qué Elegirme -->
         <section id="servicios" class="benefits-section">
             <div class="container">
-                <h2 class="section-title">¿Por Qué Trabajar Conmigo?</h2>
+                <h2 class="section-title" data-animate="text-reveal">
+                    <span class="word">
+                        <span class="char">¿</span>
+                        <span class="char">P</span>
+                        <span class="char">o</span>
+                        <span class="char">r</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">Q</span>
+                        <span class="char">u</span>
+                        <span class="char">é</span>
+                    </span>
+                    <span class="word gradient-text">
+                        <span class="char">T</span>
+                        <span class="char">r</span>
+                        <span class="char">a</span>
+                        <span class="char">b</span>
+                        <span class="char">a</span>
+                        <span class="char">j</span>
+                        <span class="char">a</span>
+                        <span class="char">r</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">C</span>
+                        <span class="char">o</span>
+                        <span class="char">n</span>
+                        <span class="char">m</span>
+                        <span class="char">i</span>
+                        <span class="char">g</span>
+                        <span class="char">o</span>
+                        <span class="char">?</span>
+                    </span>
+                </h2>
                 <div class="benefits-grid">
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="100">
                         <div class="benefit-icon">⚡</div>
                         <h3>Entrega Rápida</h3>
                         <p>Tu página online en 5-10 días, no semanas</p>
                     </div>
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="200">
                         <div class="benefit-icon">💰</div>
                         <h3>Precios Accesibles</h3>
                         <p>Sin costos ocultos ni mensualidades sorpresa</p>
                     </div>
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="300">
                         <div class="benefit-icon">📱</div>
                         <h3>100% Responsive</h3>
                         <p>Se ve perfecto en celulares, tablets y computadoras</p>
                     </div>
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="400">
                         <div class="benefit-icon">🎨</div>
                         <h3>Diseño Moderno</h3>
                         <p>Diseños actuales que generan confianza</p>
                     </div>
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="500">
                         <div class="benefit-icon">🔧</div>
                         <h3>Fácil de Actualizar</h3>
                         <p>Panel admin simple para que actualices vos mismo</p>
                     </div>
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="600">
                         <div class="benefit-icon">🤝</div>
                         <h3>Soporte Incluido</h3>
                         <p>Ayuda post-entrega sin cargo extra</p>
                     </div>
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="700">
                         <div class="benefit-icon">🚀</div>
                         <h3>SEO Optimizado</h3>
                         <p>Configurado para aparecer en Google</p>
                     </div>
-                    <div class="benefit-card scroll-reveal">
+                    <div class="benefit-card" data-animate="fade-up" data-delay="800">
                         <div class="benefit-icon">✅</div>
                         <h3>Garantía</h3>
                         <p>Revisiones ilimitadas hasta que estés 100% conforme</p>
@@ -387,9 +583,28 @@
         <!-- Proceso de Trabajo -->
         <section class="process-section">
             <div class="container">
-                <h2 class="section-title">Cómo Trabajamos</h2>
+                <h2 class="section-title" data-animate="text-reveal">
+                    <span class="word">
+                        <span class="char">C</span>
+                        <span class="char">ó</span>
+                        <span class="char">m</span>
+                        <span class="char">o</span>
+                    </span>
+                    <span class="word gradient-text">
+                        <span class="char">T</span>
+                        <span class="char">r</span>
+                        <span class="char">a</span>
+                        <span class="char">b</span>
+                        <span class="char">a</span>
+                        <span class="char">j</span>
+                        <span class="char">a</span>
+                        <span class="char">m</span>
+                        <span class="char">o</span>
+                        <span class="char">s</span>
+                    </span>
+                </h2>
                 <div class="timeline">
-                    <div class="timeline-item scroll-reveal">
+                    <div class="timeline-item" data-animate="fade-up" data-delay="100">
                         <div class="timeline-number">1</div>
                         <div class="timeline-content">
                             <h3>Contacto</h3>
@@ -400,48 +615,48 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="timeline-item scroll-reveal">
+                    <div class="timeline-item" data-animate="fade-up" data-delay="200">
                         <div class="timeline-number">2</div>
                         <div class="timeline-content">
                             <h3>Presupuesto</h3>
-                            <p class="timeline-title">Recibís cotización detallada</p>
+                            <p class="timeline-title">Propuesta personalizada</p>
                             <ul class="timeline-list">
-                                <li>En 24hs máximo</li>
-                                <li>Sin compromiso</li>
+                                <li>En 24hs tenés el presupuesto</li>
+                                <li>Sin letra chica ni sorpresas</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="timeline-item scroll-reveal">
+                    <div class="timeline-item" data-animate="fade-up" data-delay="300">
                         <div class="timeline-number">3</div>
                         <div class="timeline-content">
                             <h3>Diseño</h3>
-                            <p class="timeline-title">Creamos tu página</p>
+                            <p class="timeline-title">Creo tu sitio</p>
                             <ul class="timeline-list">
-                                <li>Con tus colores, textos e imágenes</li>
-                                <li>Te mostramos avances</li>
+                                <li>Diseño moderno adaptado a tu marca</li>
+                                <li>Revisiones hasta que ames el resultado</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="timeline-item scroll-reveal">
+                    <div class="timeline-item" data-animate="fade-up" data-delay="400">
                         <div class="timeline-number">4</div>
                         <div class="timeline-content">
-                            <h3>Revisión</h3>
-                            <p class="timeline-title">Ajustes y cambios</p>
+                            <h3>Desarrollo</h3>
+                            <p class="timeline-title">Lo hago realidad</p>
                             <ul class="timeline-list">
-                                <li>Modificaciones ilimitadas</li>
-                                <li>Hasta que estés 100% conforme</li>
+                                <li>Código limpio y profesional</li>
+                                <li>Responsive en todos los dispositivos</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="timeline-item scroll-reveal">
+                    <div class="timeline-item" data-animate="fade-up" data-delay="500">
                         <div class="timeline-number">5</div>
                         <div class="timeline-content">
                             <h3>Entrega</h3>
-                            <p class="timeline-title">¡Tu página online!</p>
+                            <p class="timeline-title">Tu web online</p>
                             <ul class="timeline-list">
-                                <li>Dominio configurado</li>
-                                <li>Hosting activo</li>
-                                <li>Capacitación incluida</li>
+                                <li>Dominio y hosting configurado</li>
+                                <li>Capacitación para administrar tu sitio</li>
+                                <li>Soporte post-entrega incluido</li>
                             </ul>
                         </div>
                     </div>
@@ -449,250 +664,326 @@
             </div>
         </section>
 
-        <!-- Portfolio -->
+        <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio-section">
             <div class="container">
-                <h2 class="section-title">Proyectos Recientes</h2>
+                <h2 class="section-title" data-animate="text-reveal">
+                    <span class="word">
+                        <span class="char">P</span>
+                        <span class="char">r</span>
+                        <span class="char">o</span>
+                        <span class="char">y</span>
+                        <span class="char">e</span>
+                        <span class="char">c</span>
+                        <span class="char">t</span>
+                        <span class="char">o</span>
+                        <span class="char">s</span>
+                    </span>
+                    <span class="word gradient-text">
+                        <span class="char">R</span>
+                        <span class="char">e</span>
+                        <span class="char">c</span>
+                        <span class="char">i</span>
+                        <span class="char">e</span>
+                        <span class="char">n</span>
+                        <span class="char">t</span>
+                        <span class="char">e</span>
+                        <span class="char">s</span>
+                    </span>
+                </h2>
+                <p class="section-subtitle" data-animate="fade-up">Ejemplos de páginas que he desarrollado para clientes reales</p>
+                
                 <div class="portfolio-grid">
-                    <div class="portfolio-card scroll-reveal">
+                    <div class="portfolio-card" data-animate="fade-up" data-delay="100">
                         <div class="portfolio-image">
                             <div class="portfolio-mockup">
-                                <img src="rotiseria_icon.png" alt="">
+                                <img src="rotiseria_icon.png" alt="Pagina para Rotisería">
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <span class="portfolio-tag">Rotisería</span>
+                            <span class="portfolio-tag">Landing Page</span>
                             <h3>Rotisería El Buen Sabor</h3>
                             <p>Landing page con menú dinámico y sistema de pedidos por WhatsApp</p>
                             <div class="portfolio-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
                             </div>
-                            <p class="portfolio-result">+40% de consultas en 2 meses</p>
+                            <p class="portfolio-result">↑ 150% en pedidos online</p>
                         </div>
                     </div>
-                    <div class="portfolio-card scroll-reveal">
+                    
+                    <div class="portfolio-card" data-animate="fade-up" data-delay="200">
                         <div class="portfolio-image">
                             <div class="portfolio-mockup">
-                                <img src="psicologo_icon.png" alt="">
+                                <img src="psicologo_icon.png" alt="Pagina para Psicóloga">
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <span class="portfolio-tag">Psicología</span>
-                            <h3>Consultorio Dra. Martínez</h3>
-                            <p>Sitio profesional con información de servicios y formulario de contacto</p>
+                            <span class="portfolio-tag">Sitio Profesional</span>
+                            <h3>Psicóloga María González</h3>
+                            <p>Web profesional con sistema de consultas y calendario de turnos</p>
                             <div class="portfolio-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
+                                <span>Next.js</span>
+                                <span>Tailwind</span>
+                                <span>Supabase</span>
                             </div>
-                            <p class="portfolio-result">Presencia profesional online</p>
+                            <p class="portfolio-result">↑ 200% en consultas</p>
                         </div>
                     </div>
-                    <div class="portfolio-card scroll-reveal">
+                    
+                    <div class="portfolio-card" data-animate="fade-up" data-delay="300">
                         <div class="portfolio-image">
                             <div class="portfolio-mockup">
-                                <img src="gimnasio_icon.png" alt="">
+                                <img src="gimnasio_icon.png" alt="Pagina para gimnasio">
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <span class="portfolio-tag">Contabilidad</span>
-                            <h3>Estudio Contable Pérez</h3>
-                            <p>Landing page corporativa con información de servicios y testimonios</p>
+                            <span class="portfolio-tag">E-commerce</span>
+                            <h3>Gimnasio Fitness Plus</h3>
+                            <p>Sitio con grilla de clases, planes y sistema de inscripción online</p>
                             <div class="portfolio-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
+                                <span>React</span>
+                                <span>Stripe</span>
+                                <span>MongoDB</span>
                             </div>
-                            <p class="portfolio-result">Más credibilidad y confianza</p>
+                            <p class="portfolio-result">↑ 300% en inscripciones</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonios -->
+        <!-- Testimonials Section -->
         <section class="testimonials-section">
             <div class="container">
-                <h2 class="section-title">Lo Que Dicen Mis Clientes</h2>
+                <h2 class="section-title" data-animate="text-reveal">
+                    <span class="word">
+                        <span class="char">L</span>
+                        <span class="char">o</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">q</span>
+                        <span class="char">u</span>
+                        <span class="char">e</span>
+                    </span>
+                    <span class="word gradient-text">
+                        <span class="char">D</span>
+                        <span class="char">i</span>
+                        <span class="char">c</span>
+                        <span class="char">e</span>
+                        <span class="char">n</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">M</span>
+                        <span class="char">i</span>
+                        <span class="char">s</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">C</span>
+                        <span class="char">l</span>
+                        <span class="char">i</span>
+                        <span class="char">e</span>
+                        <span class="char">n</span>
+                        <span class="char">t</span>
+                        <span class="char">e</span>
+                        <span class="char">s</span>
+                    </span>
+                </h2>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card scroll-reveal">
+                    <div class="testimonial-card" data-animate="fade-up" data-delay="100">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Facundo me armó la página de mi rotisería en una semana. Súper profesional y el panel para actualizar el menú es muy fácil de usar."</p>
-                        <p class="testimonial-author">— Carlos R., Dueño de Rotisería El Buen Sabor</p>
+                        <p class="testimonial-text">"Facundo transformó mi negocio. Ahora recibo pedidos todos los días por la web. ¡Súper recomendable!"</p>
+                        <p class="testimonial-author">— Roberto M., Rotisería El Buen Sabor</p>
                     </div>
-                    <div class="testimonial-card scroll-reveal">
+                    <div class="testimonial-card" data-animate="fade-up" data-delay="200">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Excelente trabajo. La página de mi consultorio quedó impecable y ya estoy recibiendo más consultas. 100% recomendable."</p>
-                        <p class="testimonial-author">— Dra. Laura M., Psicóloga</p>
+                        <p class="testimonial-text">"Excelente profesional. Rápido, prolijo y siempre disponible. Mi consultorio ahora tiene presencia profesional online."</p>
+                        <p class="testimonial-author">— María G., Psicóloga</p>
                     </div>
-                    <div class="testimonial-card scroll-reveal">
+                    <div class="testimonial-card" data-animate="fade-up" data-delay="300">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Rápido, económico y con muy buen resultado. Quedé re conforme con mi landing page."</p>
-                        <p class="testimonial-author">— Juan P., Contador Público</p>
+                        <p class="testimonial-text">"Mejor imposible. En una semana tenía mi web funcionando y los clientes empezaron a llegar. Vale cada peso."</p>
+                        <p class="testimonial-author">— Diego S., Gimnasio Fitness Plus</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- FAQ Section -->
         <section class="faq-section">
             <div class="container">
-                <h2 class="section-title">Preguntas Frecuentes</h2>
-                <div class="faq-accordion" id="faqAccordion">
-                    <div class="faq-item">
+                <h2 class="section-title" data-animate="text-reveal">
+                    <span class="word gradient-text">
+                        <span class="char">P</span>
+                        <span class="char">r</span>
+                        <span class="char">e</span>
+                        <span class="char">g</span>
+                        <span class="char">u</span>
+                        <span class="char">n</span>
+                        <span class="char">t</span>
+                        <span class="char">a</span>
+                        <span class="char">s</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">F</span>
+                        <span class="char">r</span>
+                        <span class="char">e</span>
+                        <span class="char">c</span>
+                        <span class="char">u</span>
+                        <span class="char">e</span>
+                        <span class="char">n</span>
+                        <span class="char">t</span>
+                        <span class="char">e</span>
+                        <span class="char">s</span>
+                    </span>
+                </h2>
+                <div class="faq-accordion">
+                    <div class="faq-item" data-animate="fade-up" data-delay="100">
                         <button class="faq-question">
-                            <span>¿Cuánto demora el desarrollo?</span>
+                            <span>¿Cuánto tarda en estar lista mi página?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Depende del tipo de proyecto. Una landing page simple toma 3-5 días, mientras que un e-commerce completo puede llevar 15-20 días. Te doy un tiempo estimado exacto cuando me contás tu proyecto.</p>
+                            <p>Dependiendo del tipo de proyecto, entre 5-10 días hábiles. Landing pages simples pueden estar en 3-5 días, mientras que proyectos más complejos pueden tomar hasta 2 semanas.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
+                    <div class="faq-item" data-animate="fade-up" data-delay="200">
                         <button class="faq-question">
-                            <span>¿Incluye el dominio y hosting?</span>
+                            <span>¿Incluye dominio y hosting?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Sí, el primer año de dominio y hosting está incluido sin cargo adicional. Después podés renovarlo vos mismo o te ayudo con eso.</p>
+                            <p>El precio incluye el desarrollo completo de la página. El hosting y dominio se cobran aparte según el plan que elijas (desde $3.000/mes), pero te ayudo con toda la configuración sin costo adicional.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
+                    <div class="faq-item" data-animate="fade-up" data-delay="300">
                         <button class="faq-question">
                             <span>¿Puedo actualizar el contenido yo mismo?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>¡Absolutamente! Te entrego un panel de administración súper simple donde podés cambiar textos, imágenes, precios, etc. sin necesidad de programar. Y te capacito para que sepas usarlo.</p>
+                            <p>¡Sí! Todos los proyectos incluyen un panel de administración simple donde podés modificar textos, imágenes, precios, menús, etc. También te doy una capacitación completa.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
+                    <div class="faq-item" data-animate="fade-up" data-delay="400">
                         <button class="faq-question">
-                            <span>¿Qué pasa si no me gusta algo?</span>
+                            <span>¿Qué pasa si no me gusta el diseño?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Hacemos todas las revisiones necesarias hasta que estés 100% conforme. No hay límite de cambios durante el desarrollo.</p>
+                            <p>Incluyo revisiones ilimitadas hasta que estés 100% conforme con el resultado. Tu satisfacción es mi prioridad.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
+                    <div class="faq-item" data-animate="fade-up" data-delay="500">
                         <button class="faq-question">
-                            <span>¿Tiene costo de mantenimiento mensual?</span>
+                            <span>¿Ofrecés soporte después de entregar la web?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>No hay costos mensuales obligatorios. Solo pagás el hosting anual (muy económico) y podés manejarlo vos mismo. Si querés que yo haga actualizaciones o cambios después, lo coordinamos puntualmente.</p>
+                            <p>Sí, todos los proyectos incluyen 30 días de soporte post-entrega sin cargo. Después podés contratar un plan de mantenimiento mensual opcional.</p>
                         </div>
                     </div>
-                    <div class="faq-item">
+                    <div class="faq-item" data-animate="fade-up" data-delay="600">
                         <button class="faq-question">
-                            <span>¿Qué datos necesitás para empezar?</span>
+                            <span>¿Trabajás con clientes de todo el país?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Básicamente: textos que querés que diga la página, tu logo (si tenés), fotos o imágenes, y tus colores de marca. Si no tenés todo, te ayudo a conseguirlo o crearlo.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Hacés páginas para cualquier tipo de negocio?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sí, trabajo con todo tipo de negocios y profesionales: rotiserías, psicólogos, abogados, gimnasios, talleres, tiendas online, etc. Cada página se adapta 100% a tu negocio.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Ofrecés soporte post-entrega?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sí, incluyo 30 días de soporte técnico gratis después de la entrega. Si tenés alguna duda o problema, estoy disponible por WhatsApp.</p>
+                            <p>¡Sí! Trabajo de forma remota con clientes de toda Argentina. Nos comunicamos por WhatsApp, videollamadas y email.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Final -->
+        <!-- CTA Section -->
         <section class="cta-section">
+            <div class="cta-bg-animated"></div>
             <div class="container">
-                <h2 class="cta-title">¿Listo Para Tener Tu Página Web?</h2>
-                <p class="cta-subtitle">Empezamos hoy y en una semana está online</p>
-                <div class="cta-buttons">
-                    <a href="#calculadora" class="btn-primary btn-large">Calcular Mi Presupuesto</a>
-                    <a href="https://wa.me/5492235254889?text=Hola!%20Quiero%20tener%20mi%20p%C3%A1gina%20web.%20%C2%BFCu%C3%A1ndo%20podemos%20empezar%3F" class="btn-outline btn-large btn-white" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+                <h2 class="cta-title" data-animate="text-reveal">
+                    <span class="word">
+                        <span class="char">¿</span>
+                        <span class="char">L</span>
+                        <span class="char">i</span>
+                        <span class="char">s</span>
+                        <span class="char">t</span>
+                        <span class="char">o</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">p</span>
+                        <span class="char">a</span>
+                        <span class="char">r</span>
+                        <span class="char">a</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">D</span>
+                        <span class="char">e</span>
+                        <span class="char">s</span>
+                        <span class="char">p</span>
+                        <span class="char">e</span>
+                        <span class="char">g</span>
+                        <span class="char">a</span>
+                        <span class="char">r</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">t</span>
+                        <span class="char">u</span>
+                    </span>
+                    <span class="word">
+                        <span class="char">N</span>
+                        <span class="char">e</span>
+                        <span class="char">g</span>
+                        <span class="char">o</span>
+                        <span class="char">c</span>
+                        <span class="char">i</span>
+                        <span class="char">o</span>
+                        <span class="char">?</span>
+                    </span>
+                </h2>
+                <p class="cta-subtitle" data-animate="fade-up">Empecemos hoy. Tu página web puede estar online en menos de una semana.</p>
+                <div class="cta-buttons" data-animate="fade-up" data-delay="200">
+                    <a href="https://wa.me/5492235254889?text=Hola!%20Me%20interesa%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" class="btn-primary btn-large magnetic-btn" target="_blank" rel="noopener">
+                        <span>Contactar por WhatsApp</span>
+                    </a>
+                    <a href="#calculadora" class="btn-white btn-outline btn-large magnetic-btn">
+                        <span>Ver Precios</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Contacto -->
+        <!-- Contact Section -->
         <section id="contacto" class="contact-section">
             <div class="container">
-                <h2 class="section-title">Hablemos de Tu Proyecto</h2>
+                <h2 class="section-title" data-animate="text-reveal">
+                    <span class="word gradient-text">
+                        <span class="char">C</span>
+                        <span class="char">o</span>
+                        <span class="char">n</span>
+                        <span class="char">t</span>
+                        <span class="char">a</span>
+                        <span class="char">c</span>
+                        <span class="char">t</span>
+                        <span class="char">o</span>
+                    </span>
+                </h2>
+                <p class="section-subtitle" data-animate="fade-up">Hablemos de tu proyecto. Te respondo en menos de 24 horas.</p>
+                
                 <div class="contact-grid">
-                    <div class="contact-form-container scroll-reveal">
-                        <form id="contactForm" action="https://formsubmit.co/facundobaldezari@gmail.com" method="POST">
-                            <input type="hidden" name="_subject" value="Nueva consulta desde la web">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            
-                            <div class="form-group">
-                                <label for="name">Nombre *</label>
-                                <input type="text" id="name" name="nombre" required>
+                    <div class="contact-info" data-animate="fade-up" data-delay="100">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3>Email</h3>
+                                <a href="mailto:facundo@example.com">facundo@example.com</a>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" name="telefono">
-                            </div>
-                            <div class="form-group">
-                                <label for="project">Tipo de proyecto</label>
-                                <select id="project" name="tipo_proyecto">
-                                    <option value="">Seleccioná una opción</option>
-                                    <option value="landing">Landing Page Simple</option>
-                                    <option value="corporativo">Sitio Corporativo</option>
-                                    <option value="rotiseria">Rotisería / Gastronomía</option>
-                                    <option value="ecommerce">Tienda Online / E-commerce</option>
-                                    <option value="psicologos">Psicólogos/Terapeutas</option>
-                                    <option value="taller">Taller de Reparación</option>
-                                    <option value="gimnasio">Gimnasio / Fitness</option>
-                                    <option value="personalizado">Página Personalizada</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" name="mensaje" rows="5"></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary btn-large btn-full">Enviar Consulta</button>
-                        </form>
-                    </div>
-                    <div class="contact-info scroll-reveal">
+                        </div>
                         <div class="contact-item">
                             <div class="contact-icon">📱</div>
                             <div>
                                 <h3>WhatsApp</h3>
-                                <a href="https://wa.me/5492235254889" target="_blank" rel="noopener" class="contact-link">+54 223 525-4889</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div>
-                                <h3>Email</h3>
-                                <a href="mailto:facundobaldezari@gmail.com" class="contact-link">facundobaldezari@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">💻</div>
-                            <div>
-                                <h3>GitHub</h3>
-                                <a href="https://github.com/Baldezari00" target="_blank" rel="noopener" class="contact-link">github.com/Baldezari00</a>
+                                <a href="https://wa.me/5492235254889" target="_blank" rel="noopener">+54 9 223 525 4889</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -702,56 +993,29 @@
                                 <p>Mar del Plata, Argentina</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">🕐</div>
-                            <div>
-                                <h3>Horarios</h3>
-                                <p>Lun - Vie: 9am - 20hs</p>
-                            </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm" data-animate="fade-up" data-delay="200">
+                        <div class="form-group">
+                            <label for="name">Nombre*</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Proyectos (oculta por defecto) -->
-        <section id="proyectos" class="projects-showcase" style="display: none;">
-            <div class="container">
-                <div class="projects-header">
-                    <h2 class="section-title">Mis Proyectos Realizados</h2>
-                    <p class="section-subtitle">Explorá las demos de páginas web que he desarrollado</p>
-                </div>
-                <div class="demo-projects-grid">
-                    <div class="demo-project-card">
-                        <span class="demo-project-icon">🧠</span>
-                        <h3>Psicólogos</h3>
-                        <p>Página web profesional para consultorios de psicología con todas las funcionalidades necesarias</p>
-                        <a href="/psicologos/" class="demo-btn" target="_blank">Ver Demo</a>
-                    </div>
-                    <div class="demo-project-card">
-                        <span class="demo-project-icon">🍕</span>
-                        <h3>Rotiserías</h3>
-                        <p>Sistema completo de pedidos online con menú digital y gestión de entregas</p>
-                        <a href="/rotiseria/" class="demo-btn" target="_blank">Ver Demo</a>
-                    </div>
-                    <div class="demo-project-card">
-                        <span class="demo-project-icon">💪</span>
-                        <h3>Gimnasios</h3>
-                        <p>Plataforma web con información de clases, horarios y sistema de contacto</p>
-                        <a href="/gimansio/" class="demo-btn" target="_blank">Ver Demo</a>
-                    </div>
-                    <div class="demo-project-card">
-                        <span class="demo-project-icon">🛠️</span>
-                        <h3>Reparación Técnica</h3>
-                        <p>Plataforma web con información de reparaciones, tabla de precios y panel administrador</p>
-                        <a href="/reparacion/" class="demo-btn" target="_blank">Ver Demo</a>
-                    </div>
-                     <div class="demo-project-card">
-                        <span class="demo-project-icon">🛠️</span>
-                        <h3>Reparación Técnica</h3>
-                        <p>Plataforma web con información de reparaciones, tabla de precios y panel administrador</p>
-                        <a href="/reparacionSql/public/index.html" class="demo-btn" target="_blank">Ver Demo</a>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje*</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full magnetic-btn">
+                            <span>Enviar Mensaje</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -761,73 +1025,39 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Facundo Baldezari</h3>
-                    <p>Desarrollo web profesional para negocios en Mar del Plata y toda Argentina</p>
+                <div class="footer-brand">
+                    <div class="footer-logo">FB</div>
+                    <p>Desarrollo web profesional que hace crecer tu negocio</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Links Rápidos</h4>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
                     <ul>
+                        <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#calculadora">Precios</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li><a href="https://wa.me/5492235254889" target="_blank" rel="noopener">WhatsApp</a></li>
-                        <li><a href="mailto:facundobaldezari@gmail.com">Email</a></li>
-                        <li><a href="https://github.com/Baldezari00" target="_blank" rel="noopener">GitHub</a></li>
-                    </ul>
+                <div class="footer-social">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" target="_blank" rel="noopener">
+                            <span>📘</span>
+                        </a>
+                        <a href="#" class="social-icon" target="_blank" rel="noopener">
+                            <span>📷</span>
+                        </a>
+                        <a href="#" class="social-icon" target="_blank" rel="noopener">
+                            <span>💼</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Facundo Baldezari. Todos los derechos reservados.</p>
-                <p class="footer-love">Desarrollado con ❤️ en Argentina</p>
             </div>
         </div>
     </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5492235254889?text=Hola!%20Me%20interesa%20cotizar%20una%20p%C3%A1gina%20web" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-<span class="whatsapp-icon">
-    <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-    </svg>
-</span>        <span class="whatsapp-tooltip">Contactame por WhatsApp</span>
-    </a>
-
-    <!-- Botón Ver Proyectos -->
-    <button id="toggleProjects" class="projects-toggle-btn" aria-label="Ver proyectos realizados">
-        <span class="projects-btn-icon">🎨</span>
-        <span class="projects-btn-text">Ver Demos</span>
-    </button>
-
-    <!-- Botón Cambiar Tema -->
-    <div class="theme-selector" id="themeSelector">
-        <button class="theme-btn" aria-label="Cambiar tema de colores">
-            <span class="theme-icon">🎨</span>
-        </button>
-        <div class="theme-options" id="themeOptions">
-            <button class="theme-option" data-theme="purple" aria-label="Tema morado" title="Morado/Azul">
-                <span class="theme-color" style="background: linear-gradient(135deg, #667eea, #764ba2);"></span>
-            </button>
-            <button class="theme-option" data-theme="green" aria-label="Tema verde" title="Verde/Azul">
-                <span class="theme-color" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></span>
-            </button>
-            <button class="theme-option" data-theme="orange" aria-label="Tema naranja" title="Naranja/Rosa">
-                <span class="theme-color" style="background: linear-gradient(135deg, #f46b45, #eea849);"></span>
-            </button>
-            <button class="theme-option" data-theme="blue" aria-label="Tema azul" title="Azul Oscuro">
-                <span class="theme-color" style="background: linear-gradient(135deg, #2193b0, #6dd5ed);"></span>
-            </button>
-            <button class="theme-option" data-theme="red" aria-label="Tema rojo" title="Rojo/Púrpura">
-                <span class="theme-color" style="background: linear-gradient(135deg, #c94b4b, #4b134f);"></span>
-            </button>
-        </div>
-    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
