@@ -311,6 +311,62 @@ function initAnimations() {
   })
 }
 
+/* ===================================
+   Theme Switcher Functionality
+   =================================== */
+function initThemeSwitcher() {
+  const themeBtn = document.getElementById('themeBtn');
+  const themeDropdown = document.getElementById('themeDropdown');
+  const themeOptions = document.querySelectorAll('.theme-option');
+  const html = document.documentElement;
+
+  // Cargar tema guardado
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  html.setAttribute('data-theme', savedTheme);
+  updateActiveTheme(savedTheme);
+
+  // Toggle dropdown
+  themeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themeDropdown.classList.toggle('active');
+  });
+
+  // Cerrar dropdown al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!themeDropdown.contains(e.target) && e.target !== themeBtn) {
+      themeDropdown.classList.remove('active');
+    }
+  });
+
+  // Cambiar tema
+  themeOptions.forEach((option) => {
+    option.addEventListener('click', () => {
+      const theme = option.getAttribute('data-theme');
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      updateActiveTheme(theme);
+      themeDropdown.classList.remove('active');
+
+      // Animación del botón
+      themeBtn.style.transform = 'scale(0.8) rotate(360deg)';
+      setTimeout(() => {
+        themeBtn.style.transform = 'scale(1) rotate(0deg)';
+      }, 300);
+    });
+  });
+
+  function updateActiveTheme(theme) {
+    themeOptions.forEach((option) => {
+      if (option.getAttribute('data-theme') === theme) {
+        option.classList.add('active');
+      } else {
+        option.classList.remove('active');
+      }
+    });
+  }
+}
+
+
 // ===================================
 // Initialize Everything
 // ===================================
@@ -329,6 +385,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initFAQ()
     initContactForm()
     initParallax()
+    initThemeSwitcher();
+
   }, 100)
 })
 
